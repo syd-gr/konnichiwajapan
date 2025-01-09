@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minna no Nihongo Lesson 48</title>
+    <style>
+        .table-container {
+            margin-top: 20px;
+            display: block; /* Show table by default */
+        }
+
+        .excel-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .excel-table th, .excel-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .excel-table th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="table-container">
+        <table id="excelTable" class="excel-table">
+            <thead>
+                <tr>
+                    <th>S.N</th>
+                    <th>Kanji</th>
+                    <th>Hiragana</th>
+                    <th>Romanize</th>
+                    <th>Meaning</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script>
+        // Vocabulary for Lesson 48
+        const vocabularyLesson48 = [
+            { kanji: "降ろす", hiragana: "おろす", romaji: "orosu", meaning: "put down, lower" },
+            { kanji: "届ける", hiragana: "とどける", romaji: "todokeru", meaning: "deliver, report" },
+            { kanji: "世話をする", hiragana: "せわをする", romaji: "sewa o suru", meaning: "take care of ~" },
+            { kanji: "嫌な", hiragana: "いやな", romaji: "iyana", meaning: "unwilling, reluctant" },
+            { kanji: "厳しい", hiragana: "きびしい", romaji: "kibishii", meaning: "strict, hard" },
+            { kanji: "塾", hiragana: "じゅく", romaji: "juku", meaning: "cram school" },
+            { kanji: "", hiragana: "スケジュール", romaji: "sukejuuru", meaning: "schedule" },
+            { kanji: "生徒", hiragana: "せいと", romaji: "seito", meaning: "pupil" },
+            { kanji: "者", hiragana: "もの", romaji: "mono", meaning: "person (referring to one’s relatives or subordinates)" },
+            { kanji: "入管", hiragana: "にゅうかん", romaji: "nyuukan", meaning: "Immigration Bureau" },
+            { kanji: "再入国ビザ", hiragana: "さいにゅうこくビザ", romaji: "sai nyuukoku biza", meaning: "re-entry visa" },
+            { kanji: "", hiragana: "自由に", romaji: "jiyuu ni", meaning: "freely" },
+            { kanji: "", hiragana: "いいことですね", romaji: "ii koto desu ne", meaning: "That’s good" },
+            { kanji: "久しぶり", hiragana: "ひさしぶり", romaji: "hisashiburi", meaning: "It’s been a long time/Long time no see" },
+            { kanji: "", hiragana: "かまいません", romaji: "kamaimasen", meaning: "It’s all right / It’s doesn’t matter" },
+            { kanji: "", hiragana: "もともと", romaji: "motomoto", meaning: "originally" },
+            { kanji: "世紀", hiragana: "せいき", romaji: "seiki", meaning: "century" },
+            { kanji: "心", hiragana: "こころ", romaji: "kokoro", meaning: "heart, mind" },
+            { kanji: "∼間", hiragana: "∼かん", romaji: "∼kan", meaning: "interval, period of time" },
+            { kanji: "お忙しいですか", hiragana: "おいそがしいですか", romaji: "o isogashii desu ka", meaning: "Are you busy?" },
+            { kanji: "営業", hiragana: "えいぎょう", romaji: "eigyou", meaning: "business, sales" },
+            { kanji: "", hiragana: "それまでに", romaji: "sore made ni", meaning: "by that time" },
+            { kanji: "楽しむ", hiragana: "たのしむ", romaji: "tanoshimu", meaning: "enjoy oneself" }
+        ];
+
+        const tableBody = document.querySelector("#excelTable tbody");
+
+        // Populate the table when the page loads
+        window.onload = populateTable;
+
+        function populateTable() {
+            tableBody.innerHTML = ""; // Clear previous data
+            vocabularyLesson48.forEach((vocab, index) => {
+                const row = `<tr>
+                    <td>${index + 1}</td>
+                    <td>${vocab.kanji}</td>
+                    <td>${vocab.hiragana}</td>
+                    <td>${vocab.romaji}</td>
+                    <td>${vocab.meaning}</td>
+                </tr>`;
+                tableBody.insertAdjacentHTML("beforeend", row);
+            });
+        }
+    </script>
+</body>
+</html>

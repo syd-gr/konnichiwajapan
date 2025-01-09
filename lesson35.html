@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minna no Nihongo Lesson 35</title>
+    <style>
+        .table-container {
+            margin-top: 20px;
+            display: block; /* Show table by default */
+        }
+
+        .excel-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .excel-table th, .excel-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .excel-table th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="table-container">
+        <table id="excelTable" class="excel-table">
+            <thead>
+                <tr>
+                    <th>S.N</th>
+                    <th>Kanji</th>
+                    <th>Hiragana</th>
+                    <th>Romanize</th>
+                    <th>Meaning</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script>
+        // Full Vocabulary for Lesson 35
+        const vocabularyLesson35 = [
+            { kanji: "見える", hiragana: "みえる", romaji: "mieru", meaning: "To be visible" },
+            { kanji: "聞こえる", hiragana: "きこえる", romaji: "kikoeru", meaning: "To be audible" },
+            { kanji: "できる", hiragana: "できる", romaji: "dekiru", meaning: "To be able to" },
+            { kanji: "開く", hiragana: "ひらく", romaji: "hiraku", meaning: "To open (a door, etc.)" },
+            { kanji: "閉める", hiragana: "しめる", romaji: "shimeru", meaning: "To close" },
+            { kanji: "押す", hiragana: "おす", romaji: "osu", meaning: "To push" },
+            { kanji: "引く", hiragana: "ひく", romaji: "hiku", meaning: "To pull" },
+            { kanji: "曲がる", hiragana: "まがる", romaji: "magaru", meaning: "To turn (right/left)" },
+            { kanji: "渡る", hiragana: "わたる", romaji: "wataru", meaning: "To cross (a street)" },
+            { kanji: "歩く", hiragana: "あるく", romaji: "aruku", meaning: "To walk" },
+            { kanji: "走る", hiragana: "はしる", romaji: "hashiru", meaning: "To run" },
+            { kanji: "乗る", hiragana: "のる", romaji: "noru", meaning: "To ride" },
+            { kanji: "降りる", hiragana: "おりる", romaji: "oriru", meaning: "To get off" },
+            { kanji: "立つ", hiragana: "たつ", romaji: "tatsu", meaning: "To stand" },
+            { kanji: "座る", hiragana: "すわる", romaji: "suwaru", meaning: "To sit" },
+            { kanji: "使う", hiragana: "つかう", romaji: "tsukau", meaning: "To use" },
+            { kanji: "動く", hiragana: "うごく", romaji: "ugoku", meaning: "To move" },
+            { kanji: "止まる", hiragana: "とまる", romaji: "tomaru", meaning: "To stop" },
+            { kanji: "開ける", hiragana: "あける", romaji: "akeru", meaning: "To open (a door, etc.)" },
+            { kanji: "閉じる", hiragana: "とじる", romaji: "toji", meaning: "To close (a book, etc.)" },
+            { kanji: "見つける", hiragana: "みつける", romaji: "mitsukeru", meaning: "To find" },
+            { kanji: "探す", hiragana: "さがす", romaji: "sagasu", meaning: "To search" },
+            { kanji: "勝つ", hiragana: "かつ", romaji: "katsu", meaning: "To win" },
+            { kanji: "負ける", hiragana: "まける", romaji: "makeru", meaning: "To lose" },
+            { kanji: "売る", hiragana: "うる", romaji: "uru", meaning: "To sell" },
+            { kanji: "買う", hiragana: "かう", romaji: "kau", meaning: "To buy" },
+            { kanji: "受ける", hiragana: "うける", romaji: "ukeru", meaning: "To take (a test)" },
+            { kanji: "働く", hiragana: "はたらく", romaji: "hataraku", meaning: "To work" },
+            { kanji: "休む", hiragana: "やすむ", romaji: "yasumu", meaning: "To rest, to take a break" },
+            { kanji: "読書", hiragana: "どくしょ", romaji: "dokusho", meaning: "Reading books" },
+            { kanji: "会話", hiragana: "かいわ", romaji: "kaiwa", meaning: "Conversation" },
+            { kanji: "旅行", hiragana: "りょこう", romaji: "ryokou", meaning: "Travel" }
+        ];
+
+        const tableBody = document.querySelector("#excelTable tbody");
+
+        // Populate the table when the page loads
+        window.onload = populateTable;
+
+        function populateTable() {
+            tableBody.innerHTML = ""; // Clear previous data
+            vocabularyLesson35.forEach((vocab, index) => {
+                const row = `<tr>
+                    <td>${index + 1}</td>
+                    <td>${vocab.kanji}</td>
+                    <td>${vocab.hiragana}</td>
+                    <td>${vocab.romaji}</td>
+                    <td>${vocab.meaning}</td>
+                </tr>`;
+                tableBody.insertAdjacentHTML("beforeend", row);
+            });
+        }
+    </script>
+</body>
+</html>

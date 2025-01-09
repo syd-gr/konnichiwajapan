@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minna no Nihongo Lesson 5</title>
+    <style>
+        .table-container {
+            margin-top: 20px;
+            display: block; /* Show table by default */
+        }
+
+        .excel-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .excel-table th, .excel-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .excel-table th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="table-container">
+        <table id="excelTable" class="excel-table">
+            <thead>
+                <tr>
+                    <th>S.N</th>
+                    <th>Kanji</th>
+                    <th>Hiragana</th>
+                    <th>Romanize</th>
+                    <th>Meaning</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script>
+        // Vocabulary for Lesson 5
+        const vocabularyLesson5 = [
+            { kanji: "病院", hiragana: "びょういん", romaji: "byouin", meaning: "Hospital" },
+            { kanji: "銀行", hiragana: "ぎんこう", romaji: "ginkou", meaning: "Bank" },
+            { kanji: "スーパー", hiragana: "スーパー", romaji: "suupaa", meaning: "Supermarket" },
+            { kanji: "公園", hiragana: "こうえん", romaji: "kouen", meaning: "Park" },
+            { kanji: "郵便局", hiragana: "ゆうびんきょく", romaji: "yuubinkyoku", meaning: "Post office" },
+            { kanji: "図書館", hiragana: "としょかん", romaji: "toshokan", meaning: "Library" },
+            { kanji: "映画", hiragana: "えいが", romaji: "eiga", meaning: "Movie" },
+            { kanji: "レストラン", hiragana: "レストラン", romaji: "resutoran", meaning: "Restaurant" },
+            { kanji: "会社", hiragana: "かいしゃ", romaji: "kaisha", meaning: "Company" },
+            { kanji: "自動車", hiragana: "じどうしゃ", romaji: "jidousha", meaning: "Car" },
+            { kanji: "バス", hiragana: "バス", romaji: "basu", meaning: "Bus" },
+            { kanji: "電車", hiragana: "でんしゃ", romaji: "densha", meaning: "Train" },
+            { kanji: "飛行機", hiragana: "ひこうき", romaji: "hikouki", meaning: "Airplane" },
+            { kanji: "船", hiragana: "ふね", romaji: "fune", meaning: "Ship" },
+            { kanji: "自転車", hiragana: "じてんしゃ", romaji: "jitensha", meaning: "Bicycle" },
+            { kanji: "時間", hiragana: "じかん", romaji: "jikan", meaning: "Time" },
+            { kanji: "週末", hiragana: "しゅうまつ", romaji: "shuumatsu", meaning: "Weekend" },
+            { kanji: "月曜日", hiragana: "げつようび", romaji: "getsuyoubi", meaning: "Monday" },
+            { kanji: "火曜日", hiragana: "かようび", romaji: "kayoubi", meaning: "Tuesday" },
+            { kanji: "水曜日", hiragana: "すいようび", romaji: "suiyoubi", meaning: "Wednesday" },
+            { kanji: "木曜日", hiragana: "もくようび", romaji: "mokuyoubi", meaning: "Thursday" },
+            { kanji: "金曜日", hiragana: "きんようび", romaji: "kinyoubi", meaning: "Friday" },
+            { kanji: "土曜日", hiragana: "どようび", romaji: "doyoubi", meaning: "Saturday" },
+            { kanji: "日曜日", hiragana: "にちようび", romaji: "nichiyoubi", meaning: "Sunday" },
+            { kanji: "朝", hiragana: "あさ", romaji: "asa", meaning: "Morning" },
+            { kanji: "昼", hiragana: "ひる", romaji: "hiru", meaning: "Noon" },
+            { kanji: "夜", hiragana: "よる", romaji: "yoru", meaning: "Night" }
+        ];
+
+        const tableBody = document.querySelector("#excelTable tbody");
+
+        // Populate the table when the page loads
+        window.onload = populateTable;
+
+        function populateTable() {
+            tableBody.innerHTML = ""; // Clear previous data
+            vocabularyLesson5.forEach((vocab, index) => {
+                const row = `<tr>
+                    <td>${index + 1}</td>
+                    <td>${vocab.kanji}</td>
+                    <td>${vocab.hiragana}</td>
+                    <td>${vocab.romaji}</td>
+                    <td>${vocab.meaning}</td>
+                </tr>`;
+                tableBody.insertAdjacentHTML("beforeend", row);
+            });
+        }
+    </script>
+</body>
+</html>

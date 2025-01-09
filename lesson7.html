@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minna no Nihongo Lesson 7</title>
+    <style>
+        .table-container {
+            margin-top: 20px;
+            display: block; /* Show table by default */
+        }
+
+        .excel-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .excel-table th, .excel-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .excel-table th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="table-container">
+        <table id="excelTable" class="excel-table">
+            <thead>
+                <tr>
+                    <th>S.N</th>
+                    <th>Kanji</th>
+                    <th>Hiragana</th>
+                    <th>Romanize</th>
+                    <th>Meaning</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script>
+        // Vocabulary for Lesson 7
+        const vocabularyLesson7 = [
+            { kanji: "歩く", hiragana: "あるく", romaji: "aruku", meaning: "To walk" },
+            { kanji: "泳ぐ", hiragana: "およぐ", romaji: "oyogu", meaning: "To swim" },
+            { kanji: "立つ", hiragana: "たつ", romaji: "tatsu", meaning: "To stand" },
+            { kanji: "座る", hiragana: "すわる", romaji: "suwaru", meaning: "To sit" },
+            { kanji: "開ける", hiragana: "あける", romaji: "akeru", meaning: "To open" },
+            { kanji: "閉める", hiragana: "しめる", romaji: "shimeru", meaning: "To close" },
+            { kanji: "乗る", hiragana: "のる", romaji: "noru", meaning: "To ride" },
+            { kanji: "降りる", hiragana: "おりる", romaji: "oriru", meaning: "To get off" },
+            { kanji: "始める", hiragana: "はじめる", romaji: "hajimeru", meaning: "To start" },
+            { kanji: "終わる", hiragana: "おわる", romaji: "owaru", meaning: "To finish" },
+            { kanji: "取る", hiragana: "とる", romaji: "toru", meaning: "To take" },
+            { kanji: "作る", hiragana: "つくる", romaji: "tsukuru", meaning: "To make" },
+            { kanji: "遊ぶ", hiragana: "あそぶ", romaji: "asobu", meaning: "To play" },
+            { kanji: "買う", hiragana: "かう", romaji: "kau", meaning: "To buy" },
+            { kanji: "話す", hiragana: "はなす", romaji: "hanasu", meaning: "To talk" },
+            { kanji: "働く", hiragana: "はたらく", romaji: "hataraku", meaning: "To work" },
+            { kanji: "食べる", hiragana: "たべる", romaji: "taberu", meaning: "To eat" },
+            { kanji: "飲む", hiragana: "のむ", romaji: "nomu", meaning: "To drink" },
+            { kanji: "見る", hiragana: "みる", romaji: "miru", meaning: "To see" },
+            { kanji: "読む", hiragana: "よむ", romaji: "yomu", meaning: "To read" },
+            { kanji: "書く", hiragana: "かく", romaji: "kaku", meaning: "To write" },
+            { kanji: "聞く", hiragana: "きく", romaji: "kiku", meaning: "To ask" },
+            { kanji: "待つ", hiragana: "まつ", romaji: "matsu", meaning: "To wait" },
+            { kanji: "知る", hiragana: "しる", romaji: "shiru", meaning: "To know" },
+            { kanji: "見せる", hiragana: "みせる", romaji: "miseru", meaning: "To show" },
+            { kanji: "教える", hiragana: "おしえる", romaji: "oshieru", meaning: "To teach" },
+            { kanji: "習う", hiragana: "ならう", romaji: "narau", meaning: "To learn" },
+            { kanji: "分かる", hiragana: "わかる", romaji: "wakaru", meaning: "To understand" },
+            { kanji: "使う", hiragana: "つかう", romaji: "tsukau", meaning: "To use" },
+            { kanji: "立てる", hiragana: "たてる", romaji: "tateru", meaning: "To set up" },
+            { kanji: "書ける", hiragana: "かける", romaji: "kakeru", meaning: "To write (something)" },
+            { kanji: "開く", hiragana: "ひらく", romaji: "hiraku", meaning: "To open" }
+        ];
+
+        const tableBody = document.querySelector("#excelTable tbody");
+
+        // Populate the table when the page loads
+        window.onload = populateTable;
+
+        function populateTable() {
+            tableBody.innerHTML = ""; // Clear previous data
+            vocabularyLesson7.forEach((vocab, index) => {
+                const row = `<tr>
+                    <td>${index + 1}</td>
+                    <td>${vocab.kanji}</td>
+                    <td>${vocab.hiragana}</td>
+                    <td>${vocab.romaji}</td>
+                    <td>${vocab.meaning}</td>
+                </tr>`;
+                tableBody.insertAdjacentHTML("beforeend", row);
+            });
+        }
+    </script>
+</body>
+</html>

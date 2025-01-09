@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minna no Nihongo Lesson 36</title>
+    <style>
+        .table-container {
+            margin-top: 20px;
+            display: block;
+        }
+
+        .excel-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .excel-table th, .excel-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .excel-table th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="table-container">
+        <table id="excelTable" class="excel-table">
+            <thead>
+                <tr>
+                    <th>S.N</th>
+                    <th>Kanji</th>
+                    <th>Hiragana</th>
+                    <th>Romanize</th>
+                    <th>Meaning</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script>
+        // Vocabulary for Lesson 36
+        const vocabularyLesson36 = [
+            { kanji: "連絡する", hiragana: "れんらくする", romaji: "renraku suru", meaning: "To contact" },
+            { kanji: "参加する", hiragana: "さんかする", romaji: "sanka suru", meaning: "To participate" },
+            { kanji: "説明する", hiragana: "せつめいする", romaji: "setsumei suru", meaning: "To explain" },
+            { kanji: "気をつける", hiragana: "きをつける", romaji: "ki wo tsukeru", meaning: "To be careful" },
+            { kanji: "引っ越す", hiragana: "ひっこす", romaji: "hikkosu", meaning: "To move (house)" },
+            { kanji: "足りる", hiragana: "たりる", romaji: "tariru", meaning: "To be enough" },
+            { kanji: "お祝い", hiragana: "おいわい", romaji: "oiwai", meaning: "Celebration" },
+            { kanji: "祝う", hiragana: "いわう", romaji: "iwau", meaning: "To celebrate" },
+            { kanji: "決める", hiragana: "きめる", romaji: "kimeru", meaning: "To decide" },
+            { kanji: "選ぶ", hiragana: "えらぶ", romaji: "erabu", meaning: "To choose" },
+            { kanji: "送る", hiragana: "おくる", romaji: "okuru", meaning: "To send" },
+            { kanji: "使う", hiragana: "つかう", romaji: "tsukau", meaning: "To use" },
+            { kanji: "借りる", hiragana: "かりる", romaji: "kariru", meaning: "To borrow" },
+            { kanji: "返す", hiragana: "かえす", romaji: "kaesu", meaning: "To return" },
+            { kanji: "選択する", hiragana: "せんたくする", romaji: "sentaku suru", meaning: "To select" },
+            { kanji: "探す", hiragana: "さがす", romaji: "sagasu", meaning: "To search" },
+            { kanji: "見つける", hiragana: "みつける", romaji: "mitsukeru", meaning: "To find" },
+            { kanji: "治る", hiragana: "なおる", romaji: "naoru", meaning: "To get better (illness)" },
+            { kanji: "持つ", hiragana: "もつ", romaji: "motsu", meaning: "To hold, carry" },
+            { kanji: "読書する", hiragana: "どくしょする", romaji: "dokusho suru", meaning: "To read books" },
+            { kanji: "心配する", hiragana: "しんぱいする", romaji: "shinpai suru", meaning: "To worry" },
+            { kanji: "勉強する", hiragana: "べんきょうする", romaji: "benkyou suru", meaning: "To study" },
+            { kanji: "結婚する", hiragana: "けっこんする", romaji: "kekkon suru", meaning: "To get married" },
+            { kanji: "変える", hiragana: "かえる", romaji: "kaeru", meaning: "To change" },
+            { kanji: "選挙する", hiragana: "せんきょする", romaji: "senkyo suru", meaning: "To vote" },
+            { kanji: "対応する", hiragana: "たいおうする", romaji: "taiou suru", meaning: "To respond" },
+            { kanji: "改善する", hiragana: "かいぜんする", romaji: "kaizen suru", meaning: "To improve" },
+            { kanji: "期待する", hiragana: "きたいする", romaji: "kitai suru", meaning: "To expect" }
+        ];
+
+        const tableBody = document.querySelector("#excelTable tbody");
+
+        // Populate the table when the page loads
+        window.onload = populateTable;
+
+        function populateTable() {
+            tableBody.innerHTML = ""; // Clear previous data
+            vocabularyLesson36.forEach((vocab, index) => {
+                const row = `<tr>
+                    <td>${index + 1}</td>
+                    <td>${vocab.kanji}</td>
+                    <td>${vocab.hiragana}</td>
+                    <td>${vocab.romaji}</td>
+                    <td>${vocab.meaning}</td>
+                </tr>`;
+                tableBody.insertAdjacentHTML("beforeend", row);
+            });
+        }
+    </script>
+</body>
+</html>

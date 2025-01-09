@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minna no Nihongo Lesson 40</title>
+    <style>
+        .table-container {
+            margin-top: 20px;
+            display: block;
+        }
+
+        .excel-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .excel-table th, .excel-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .excel-table th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="table-container">
+        <table id="excelTable" class="excel-table">
+            <thead>
+                <tr>
+                    <th>S.N</th>
+                    <th>Kanji</th>
+                    <th>Hiragana</th>
+                    <th>Romanize</th>
+                    <th>Meaning</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script>
+        // Vocabulary for Lesson 40
+        const vocabularyLesson40 = [
+            { kanji: "洗います", hiragana: "あらいます", romaji: "araimasu", meaning: "Wash" },
+            { kanji: "着ます", hiragana: "きます", romaji: "kimasu", meaning: "Wear" },
+            { kanji: "運転します", hiragana: "うんてんします", romaji: "untenshimasu", meaning: "Drive" },
+            { kanji: "始めます", hiragana: "はじめます", romaji: "hajimemasu", meaning: "Begin" },
+            { kanji: "終わります", hiragana: "おわります", romaji: "owarimasu", meaning: "Finish" },
+            { kanji: "見せます", hiragana: "みせます", romaji: "misemasu", meaning: "Show" },
+            { kanji: "教えます", hiragana: "おしえます", romaji: "oshiemasu", meaning: "Teach" },
+            { kanji: "習います", hiragana: "ならいます", romaji: "naraimasu", meaning: "Learn" },
+            { kanji: "借ります", hiragana: "かります", romaji: "karimasu", meaning: "Borrow" },
+            { kanji: "貸します", hiragana: "かします", romaji: "kashimasu", meaning: "Lend" },
+            { kanji: "借りる", hiragana: "かりる", romaji: "kariru", meaning: "Rent" },
+            { kanji: "貸す", hiragana: "かす", romaji: "kasu", meaning: "Lend" },
+            { kanji: "持って行きます", hiragana: "もっていきます", romaji: "motte ikimasu", meaning: "Take (something)" },
+            { kanji: "持って来ます", hiragana: "もってきます", romaji: "motte kimasu", meaning: "Bring (something)" },
+            { kanji: "送ります", hiragana: "おくります", romaji: "okurimasu", meaning: "Send" },
+            { kanji: "迎えます", hiragana: "むかえます", romaji: "mukaemasu", meaning: "Greet, meet" },
+            { kanji: "手伝います", hiragana: "てつだいます", romaji: "tetsudaimasu", meaning: "Help" },
+            { kanji: "動きます", hiragana: "うごきます", romaji: "ugokimasu", meaning: "Move" },
+            { kanji: "止まります", hiragana: "とまります", romaji: "tomarimasu", meaning: "Stop" },
+            { kanji: "泊まります", hiragana: "とまります", romaji: "tomarimasu", meaning: "Stay (at a hotel)" },
+            { kanji: "貸し出し", hiragana: "かしだし", romaji: "kashidashi", meaning: "Loan" }
+        ];
+
+        const tableBody = document.querySelector("#excelTable tbody");
+
+        // Populate the table when the page loads
+        window.onload = populateTable;
+
+        function populateTable() {
+            tableBody.innerHTML = ""; // Clear previous data
+            vocabularyLesson40.forEach((vocab, index) => {
+                const row = `<tr>
+                    <td>${index + 1}</td>
+                    <td>${vocab.kanji}</td>
+                    <td>${vocab.hiragana}</td>
+                    <td>${vocab.romaji}</td>
+                    <td>${vocab.meaning}</td>
+                </tr>`;
+                tableBody.insertAdjacentHTML("beforeend", row);
+            });
+        }
+    </script>
+</body>
+</html>

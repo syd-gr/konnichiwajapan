@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minna no Nihongo Lesson 4</title>
+    <style>
+        .table-container {
+            margin-top: 20px;
+            display: block; /* Show table by default */
+        }
+
+        .excel-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .excel-table th, .excel-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .excel-table th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="table-container">
+        <table id="excelTable" class="excel-table">
+            <thead>
+                <tr>
+                    <th>S.N</th>
+                    <th>Kanji</th>
+                    <th>Hiragana</th>
+                    <th>Romanize</th>
+                    <th>Meaning</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script>
+        // Updated vocabulary for Lesson 4
+        const vocabularyLesson4 = [
+            { kanji: "時間", hiragana: "じかん", romaji: "jikan", meaning: "Time" },
+            { kanji: "日", hiragana: "ひ", romaji: "hi", meaning: "Day" },
+            { kanji: "月", hiragana: "つき", romaji: "tsuki", meaning: "Month" },
+            { kanji: "年", hiragana: "ねん", romaji: "nen", meaning: "Year" },
+            { kanji: "分", hiragana: "ふん", romaji: "fun", meaning: "Minute" },
+            { kanji: "今", hiragana: "いま", romaji: "ima", meaning: "Now" },
+            { kanji: "午前", hiragana: "ごぜん", romaji: "gozen", meaning: "AM" },
+            { kanji: "午後", hiragana: "ごご", romaji: "gogo", meaning: "PM" },
+            { kanji: "時々", hiragana: "ときどき", romaji: "tokidoki", meaning: "Sometimes" },
+            { kanji: "明日", hiragana: "あした", romaji: "ashita", meaning: "Tomorrow" },
+            { kanji: "昨日", hiragana: "きのう", romaji: "kinou", meaning: "Yesterday" },
+            { kanji: "毎日", hiragana: "まいにち", romaji: "mainichi", meaning: "Every day" },
+            { kanji: "毎週", hiragana: "まいしゅう", romaji: "maishuu", meaning: "Every week" },
+            { kanji: "毎月", hiragana: "まいつき", romaji: "maitsuki", meaning: "Every month" },
+            { kanji: "毎年", hiragana: "まいねん", romaji: "mainen", meaning: "Every year" },
+            { kanji: "後", hiragana: "あと", romaji: "ato", meaning: "After" },
+            { kanji: "前", hiragana: "まえ", romaji: "mae", meaning: "Before" },
+            { kanji: "昼", hiragana: "ひる", romaji: "hiru", meaning: "Noon" },
+            { kanji: "夜", hiragana: "よる", romaji: "yoru", meaning: "Night" },
+            { kanji: "今週", hiragana: "こんしゅう", romaji: "konshuu", meaning: "This week" },
+            { kanji: "来週", hiragana: "らいしゅう", romaji: "raishuu", meaning: "Next week" },
+            { kanji: "先週", hiragana: "せんしゅう", romaji: "senshuu", meaning: "Last week" },
+            { kanji: "今月", hiragana: "こんげつ", romaji: "kongetsu", meaning: "This month" },
+            { kanji: "来月", hiragana: "らいげつ", romaji: "raigetsu", meaning: "Next month" },
+            { kanji: "先月", hiragana: "せんげつ", romaji: "sengetsu", meaning: "Last month" },
+            { kanji: "時", hiragana: "とき", romaji: "toki", meaning: "Time, when" },
+            { kanji: "今晩", hiragana: "こんばん", romaji: "konban", meaning: "This evening" },
+            { kanji: "朝", hiragana: "あさ", romaji: "asa", meaning: "Morning" },
+            { kanji: "昼食", hiragana: "ちゅうしょく", romaji: "chuushoku", meaning: "Lunch" },
+            { kanji: "晩ご飯", hiragana: "ばんごはん", romaji: "bangohan", meaning: "Dinner" }
+        ];
+
+        const tableBody = document.querySelector("#excelTable tbody");
+
+        // Populate the table when the page loads
+        window.onload = populateTable;
+
+        function populateTable() {
+            tableBody.innerHTML = ""; // Clear previous data
+            vocabularyLesson4.forEach((vocab, index) => {
+                const row = `<tr>
+                    <td>${index + 1}</td>
+                    <td>${vocab.kanji}</td>
+                    <td>${vocab.hiragana}</td>
+                    <td>${vocab.romaji}</td>
+                    <td>${vocab.meaning}</td>
+                </tr>`;
+                tableBody.insertAdjacentHTML("beforeend", row);
+            });
+        }
+    </script>
+</body>
+</html>

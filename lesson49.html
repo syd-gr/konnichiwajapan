@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minna no Nihongo Lesson 49</title>
+    <style>
+        .table-container {
+            margin-top: 20px;
+            display: block; /* Show table by default */
+        }
+
+        .excel-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .excel-table th, .excel-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .excel-table th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="table-container">
+        <table id="excelTable" class="excel-table">
+            <thead>
+                <tr>
+                    <th>S.N</th>
+                    <th>Kanji</th>
+                    <th>Hiragana</th>
+                    <th>Romanize</th>
+                    <th>Meaning</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script>
+        // Vocabulary for Lesson 49
+        const vocabularyLesson49 = [
+            { kanji: "勤める", hiragana: "つとめる", romaji: "tsutomeru", meaning: "work (for a company)" },
+            { kanji: "休む", hiragana: "やすむ", romaji: "yasumu", meaning: "sleep, rest" },
+            { kanji: "掛ける", hiragana: "かける", romaji: "kakeru", meaning: "sit (on chair)" },
+            { kanji: "過ごす", hiragana: "すごす", romaji: "sugosu", meaning: "experience (v)" },
+            { kanji: "寄る", hiragana: "よる", romaji: "yoru", meaning: "visit, drop in" },
+            { kanji: "", hiragana: "いらっしゃる", romaji: "irassharu", meaning: "stay, have, go, come (honorific language of います、いきます、きます)" },
+            { kanji: "召し上がる", hiragana: "めしあがる", romaji: "meshiagaru", meaning: "eat, drink (honorific language of 食べます、飲みます)" },
+            { kanji: "", hiragana: "おっしゃる", romaji: "ossharu", meaning: "speak (honorific language of 言います)" },
+            { kanji: "", hiragana: "なさる", romaji: "nasaru", meaning: "do (honorific language of します)" },
+            { kanji: "ご覧になる", hiragana: "ごらんになる", romaji: "goran ni naru", meaning: "watch, look (honorific language of 見ます)" },
+            { kanji: "ご存知です", hiragana: "ごぞんじです", romaji: "gozonji desu", meaning: "know (honorific language of 知っています)" },
+            { kanji: "挨拶", hiragana: "あいさつ", romaji: "aisatsu", meaning: "greeting" },
+            { kanji: "灰皿", hiragana: "はいざら", romaji: "haizara", meaning: "the ashtray" },
+            { kanji: "旅館", hiragana: "りょかん", romaji: "ryokan", meaning: "Japanese style hotel" },
+            { kanji: "会場", hiragana: "かいじょう", romaji: "kaijou", meaning: "hall" },
+            { kanji: "亭", hiragana: "てい", romaji: "tei", meaning: "bus stop" },
+            { kanji: "貿易", hiragana: "ぼうえき", romaji: "boueki", meaning: "commerce, trade" },
+            { kanji: "様", hiragana: "さま", romaji: "sama", meaning: "sir, madam (honorific language)" },
+            { kanji: "", hiragana: "おいそがしいですか", romaji: "o isogashii desu ka", meaning: "Are you busy?" },
+            { kanji: "", hiragana: "それまでに", romaji: "sore made ni", meaning: "by that time" },
+            { kanji: "", hiragana: "たまに", romaji: "tama ni", meaning: "sometime" },
+            { kanji: "", hiragana: "ちっとも", romaji: "chitto mo", meaning: "not at all" },
+            { kanji: "遠慮なく", hiragana: "えんりょなく", romaji: "enryo naku", meaning: "be yourself at home" },
+            { kanji: "∼年∼組", hiragana: "∼ねん∼くみ", romaji: "∼nen ∼kumi", meaning: "grade… class… group" },
+            { kanji: "じゃ", hiragana: "では", romaji: "de wa", meaning: "polite form of じゃ" },
+            { kanji: "出します（熱を∼）", hiragana: "だします（ねつを∼）", romaji: "dashimasu (netsu wo∼)", meaning: "be sick" },
+            { kanji: "", hiragana: "よろしくお伝えください", romaji: "yoroshiku otsutae kudasai", meaning: "send my best regard to" },
+            { kanji: "失礼いたします", hiragana: "しつれいいたします", romaji: "shitsurei itashimasu", meaning: "excuse me (humble language of しつれいします)" }
+        ];
+
+        const tableBody = document.querySelector("#excelTable tbody");
+
+        // Populate the table when the page loads
+        window.onload = populateTable;
+
+        function populateTable() {
+            tableBody.innerHTML = ""; // Clear previous data
+            vocabularyLesson49.forEach((vocab, index) => {
+                const row = `<tr>
+                    <td>${index + 1}</td>
+                    <td>${vocab.kanji}</td>
+                    <td>${vocab.hiragana}</td>
+                    <td>${vocab.romaji}</td>
+                    <td>${vocab.meaning}</td>
+                </tr>`;
+                tableBody.insertAdjacentHTML("beforeend", row);
+            });
+        }
+    </script>
+</body>
+</html>

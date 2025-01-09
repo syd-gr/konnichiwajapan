@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minna no Nihongo Lesson 43</title>
+    <style>
+        .table-container {
+            margin-top: 20px;
+            display: block;
+        }
+
+        .excel-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .excel-table th, .excel-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .excel-table th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="table-container">
+        <table id="excelTable" class="excel-table">
+            <thead>
+                <tr>
+                    <th>S.N</th>
+                    <th>Kanji</th>
+                    <th>Hiragana</th>
+                    <th>Romanize</th>
+                    <th>Meaning</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script>
+        // Vocabulary for Lesson 43
+        const vocabularyLesson43 = [
+            { kanji: "洗います", hiragana: "あらいます", romaji: "araimasu", meaning: "Wash" },
+            { kanji: "拭きます", hiragana: "ふきます", romaji: "fukimasu", meaning: "Wipe" },
+            { kanji: "磨きます", hiragana: "みがきます", romaji: "migakimasu", meaning: "Polish" },
+            { kanji: "乾かします", hiragana: "かわかします", romaji: "kawakashimasu", meaning: "Dry" },
+            { kanji: "絞ります", hiragana: "しぼります", romaji: "shiborimasu", meaning: "Twist, wring" },
+            { kanji: "掃除します", hiragana: "そうじします", romaji: "souji shimasu", meaning: "Clean" },
+            { kanji: "整理します", hiragana: "せいりします", romaji: "seiri shimasu", meaning: "Organize" },
+            { kanji: "片付けます", hiragana: "かたづけます", romaji: "katazukemasu", meaning: "Tidy up" },
+            { kanji: "片付けます", hiragana: "かたづけます", romaji: "katazukemasu", meaning: "Put away, clear" },
+            { kanji: "整理します", hiragana: "せいりします", romaji: "seiri shimasu", meaning: "Sort out" },
+            { kanji: "届きます", hiragana: "とどきます", romaji: "todokimasu", meaning: "Arrive (for something to be delivered)" },
+            { kanji: "並べます", hiragana: "ならべます", romaji: "narabemasu", meaning: "Line up" },
+            { kanji: "並びます", hiragana: "ならびます", romaji: "narabimasu", meaning: "Stand in a line" },
+            { kanji: "集めます", hiragana: "あつめます", romaji: "atsumemasu", meaning: "Collect" },
+            { kanji: "整理します", hiragana: "せいりします", romaji: "seiri shimasu", meaning: "Arrange" },
+            { kanji: "引きます", hiragana: "ひきます", romaji: "hikimasu", meaning: "Pull" },
+            { kanji: "押します", hiragana: "おします", romaji: "oshimasu", meaning: "Push" },
+            { kanji: "取り出します", hiragana: "とりだします", romaji: "toridashimasu", meaning: "Take out" },
+            { kanji: "取ります", hiragana: "とります", romaji: "torimasu", meaning: "Take" },
+            { kanji: "使います", hiragana: "つかいます", romaji: "tsukaimasu", meaning: "Use" }
+        ];
+
+        const tableBody = document.querySelector("#excelTable tbody");
+
+        // Populate the table when the page loads
+        window.onload = populateTable;
+
+        function populateTable() {
+            tableBody.innerHTML = ""; // Clear previous data
+            vocabularyLesson43.forEach((vocab, index) => {
+                const row = `<tr>
+                    <td>${index + 1}</td>
+                    <td>${vocab.kanji}</td>
+                    <td>${vocab.hiragana}</td>
+                    <td>${vocab.romaji}</td>
+                    <td>${vocab.meaning}</td>
+                </tr>`;
+                tableBody.insertAdjacentHTML("beforeend", row);
+            });
+        }
+    </script>
+</body>
+</html>

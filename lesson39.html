@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minna no Nihongo Lesson 39</title>
+    <style>
+        .table-container {
+            margin-top: 20px;
+            display: block;
+        }
+
+        .excel-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .excel-table th, .excel-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .excel-table th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="table-container">
+        <table id="excelTable" class="excel-table">
+            <thead>
+                <tr>
+                    <th>S.N</th>
+                    <th>Kanji</th>
+                    <th>Hiragana</th>
+                    <th>Romanize</th>
+                    <th>Meaning</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script>
+        // Vocabulary for Lesson 39
+        const vocabularyLesson39 = [
+            { kanji: "行きます", hiragana: "いきます", romaji: "ikimasu", meaning: "Go" },
+            { kanji: "来ます", hiragana: "きます", romaji: "kimasu", meaning: "Come" },
+            { kanji: "帰ります", hiragana: "かえります", romaji: "kaerimasu", meaning: "Return, go home" },
+            { kanji: "食べます", hiragana: "たべます", romaji: "tabemasu", meaning: "Eat" },
+            { kanji: "飲みます", hiragana: "のみます", romaji: "nomimasu", meaning: "Drink" },
+            { kanji: "見ます", hiragana: "みます", romaji: "mimasu", meaning: "See, look at" },
+            { kanji: "聞きます", hiragana: "ききます", romaji: "kikimasu", meaning: "Ask, listen" },
+            { kanji: "話します", hiragana: "はなします", romaji: "hanashimasu", meaning: "Speak, talk" },
+            { kanji: "買います", hiragana: "かいます", romaji: "kaimasu", meaning: "Buy" },
+            { kanji: "売ります", hiragana: "うります", romaji: "urimasu", meaning: "Sell" },
+            { kanji: "使います", hiragana: "つかいます", romaji: "tsukaimasu", meaning: "Use" },
+            { kanji: "作ります", hiragana: "つくります", romaji: "tsukurimasu", meaning: "Make" },
+            { kanji: "会います", hiragana: "あいます", romaji: "aimasu", meaning: "Meet" },
+            { kanji: "遊びます", hiragana: "あそびます", romaji: "asobimasu", meaning: "Play" },
+            { kanji: "休みます", hiragana: "やすみます", romaji: "yasumimasu", meaning: "Rest" },
+            { kanji: "働きます", hiragana: "はたらきます", romaji: "hatarakimasu", meaning: "Work" },
+            { kanji: "勉強します", hiragana: "べんきょうします", romaji: "benkyou shimasu", meaning: "Study" },
+            { kanji: "寝ます", hiragana: "ねます", romaji: "nemasu", meaning: "Sleep" },
+            { kanji: "起きます", hiragana: "おきます", romaji: "okimasu", meaning: "Wake up" },
+            { kanji: "入ります", hiragana: "はいります", romaji: "hairimasu", meaning: "Enter" },
+            { kanji: "出ます", hiragana: "でます", romaji: "demasu", meaning: "Exit" },
+            { kanji: "作業します", hiragana: "さぎょうします", romaji: "sagyou shimasu", meaning: "Do work, perform tasks" }
+        ];
+
+        const tableBody = document.querySelector("#excelTable tbody");
+
+        // Populate the table when the page loads
+        window.onload = populateTable;
+
+        function populateTable() {
+            tableBody.innerHTML = ""; // Clear previous data
+            vocabularyLesson39.forEach((vocab, index) => {
+                const row = `<tr>
+                    <td>${index + 1}</td>
+                    <td>${vocab.kanji}</td>
+                    <td>${vocab.hiragana}</td>
+                    <td>${vocab.romaji}</td>
+                    <td>${vocab.meaning}</td>
+                </tr>`;
+                tableBody.insertAdjacentHTML("beforeend", row);
+            });
+        }
+    </script>
+</body>
+</html>

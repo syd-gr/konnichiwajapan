@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minna no Nihongo Lesson 41</title>
+    <style>
+        .table-container {
+            margin-top: 20px;
+            display: block;
+        }
+
+        .excel-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .excel-table th, .excel-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .excel-table th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="table-container">
+        <table id="excelTable" class="excel-table">
+            <thead>
+                <tr>
+                    <th>S.N</th>
+                    <th>Kanji</th>
+                    <th>Hiragana</th>
+                    <th>Romanize</th>
+                    <th>Meaning</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script>
+        // Vocabulary for Lesson 41
+        const vocabularyLesson41 = [
+            { kanji: "走ります", hiragana: "はしります", romaji: "hashirimasu", meaning: "Run" },
+            { kanji: "泳ぎます", hiragana: "およぎます", romaji: "oyogimasu", meaning: "Swim" },
+            { kanji: "跳びます", hiragana: "とびます", romaji: "tobimasu", meaning: "Jump" },
+            { kanji: "寝ます", hiragana: "ねます", romaji: "nemasu", meaning: "Sleep" },
+            { kanji: "起きます", hiragana: "おきます", romaji: "okimasu", meaning: "Wake up" },
+            { kanji: "立ちます", hiragana: "たちます", romaji: "tachimasu", meaning: "Stand up" },
+            { kanji: "座ります", hiragana: "すわります", romaji: "suwarimasu", meaning: "Sit down" },
+            { kanji: "持ちます", hiragana: "もちます", romaji: "mochimasu", meaning: "Hold" },
+            { kanji: "取ります", hiragana: "とります", romaji: "torimasu", meaning: "Take" },
+            { kanji: "使います", hiragana: "つかいます", romaji: "tsukaimasu", meaning: "Use" },
+            { kanji: "歩きます", hiragana: "あるきます", romaji: "arukimasu", meaning: "Walk" },
+            { kanji: "回ります", hiragana: "まわります", romaji: "mawarimasu", meaning: "Turn around" },
+            { kanji: "乗ります", hiragana: "のります", romaji: "norimasu", meaning: "Ride (a vehicle)" },
+            { kanji: "降ります", hiragana: "おります", romaji: "orimasu", meaning: "Get off (a vehicle)" },
+            { kanji: "遊びます", hiragana: "あそびます", romaji: "asobimasu", meaning: "Play" },
+            { kanji: "働きます", hiragana: "はたらきます", romaji: "hatarakimasu", meaning: "Work" },
+            { kanji: "勉強します", hiragana: "べんきょうします", romaji: "benkyou shimasu", meaning: "Study" },
+            { kanji: "見る", hiragana: "みる", romaji: "miru", meaning: "Look" },
+            { kanji: "聞く", hiragana: "きく", romaji: "kiku", meaning: "Ask, listen" },
+            { kanji: "買う", hiragana: "かう", romaji: "kau", meaning: "Buy" },
+            { kanji: "売る", hiragana: "うる", romaji: "uru", meaning: "Sell" }
+        ];
+
+        const tableBody = document.querySelector("#excelTable tbody");
+
+        // Populate the table when the page loads
+        window.onload = populateTable;
+
+        function populateTable() {
+            tableBody.innerHTML = ""; // Clear previous data
+            vocabularyLesson41.forEach((vocab, index) => {
+                const row = `<tr>
+                    <td>${index + 1}</td>
+                    <td>${vocab.kanji}</td>
+                    <td>${vocab.hiragana}</td>
+                    <td>${vocab.romaji}</td>
+                    <td>${vocab.meaning}</td>
+                </tr>`;
+                tableBody.insertAdjacentHTML("beforeend", row);
+            });
+        }
+    </script>
+</body>
+</html>

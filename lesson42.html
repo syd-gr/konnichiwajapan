@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minna no Nihongo Lesson 42</title>
+    <style>
+        .table-container {
+            margin-top: 20px;
+            display: block;
+        }
+
+        .excel-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .excel-table th, .excel-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .excel-table th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="table-container">
+        <table id="excelTable" class="excel-table">
+            <thead>
+                <tr>
+                    <th>S.N</th>
+                    <th>Kanji</th>
+                    <th>Hiragana</th>
+                    <th>Romanize</th>
+                    <th>Meaning</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script>
+        // Vocabulary for Lesson 42
+        const vocabularyLesson42 = [
+            { kanji: "泳ぎます", hiragana: "およぎます", romaji: "oyogimasu", meaning: "Swim" },
+            { kanji: "作ります", hiragana: "つくります", romaji: "tsukurimasu", meaning: "Make, Create" },
+            { kanji: "勉強します", hiragana: "べんきょうします", romaji: "benkyou shimasu", meaning: "Study" },
+            { kanji: "読書します", hiragana: "どくしょします", romaji: "dokusho shimasu", meaning: "Read books" },
+            { kanji: "結婚します", hiragana: "けっこんします", romaji: "kekkon shimasu", meaning: "Get married" },
+            { kanji: "旅行します", hiragana: "りょこうします", romaji: "ryokou shimasu", meaning: "Travel" },
+            { kanji: "教えます", hiragana: "おしえます", romaji: "oshiemasu", meaning: "Teach" },
+            { kanji: "習います", hiragana: "ならいます", romaji: "naraimasu", meaning: "Learn" },
+            { kanji: "お店", hiragana: "おみせ", romaji: "omise", meaning: "Shop" },
+            { kanji: "店員", hiragana: "てんいん", romaji: "tenin", meaning: "Shop assistant" },
+            { kanji: "通います", hiragana: "かよいます", romaji: "kayoimasu", meaning: "Go regularly (to school, work)" },
+            { kanji: "関係", hiragana: "かんけい", romaji: "kankei", meaning: "Relation, connection" },
+            { kanji: "会います", hiragana: "あいます", romaji: "aimasu", meaning: "Meet" },
+            { kanji: "遊びます", hiragana: "あそびます", romaji: "asobimasu", meaning: "Play" },
+            { kanji: "働きます", hiragana: "はたらきます", romaji: "hatarakimasu", meaning: "Work" },
+            { kanji: "食べます", hiragana: "たべます", romaji: "tabemasu", meaning: "Eat" },
+            { kanji: "飲みます", hiragana: "のみます", romaji: "nomimasu", meaning: "Drink" },
+            { kanji: "走ります", hiragana: "はしります", romaji: "hashirimasu", meaning: "Run" },
+            { kanji: "宿題", hiragana: "しゅくだい", romaji: "shukudai", meaning: "Homework" }
+        ];
+
+        const tableBody = document.querySelector("#excelTable tbody");
+
+        // Populate the table when the page loads
+        window.onload = populateTable;
+
+        function populateTable() {
+            tableBody.innerHTML = ""; // Clear previous data
+            vocabularyLesson42.forEach((vocab, index) => {
+                const row = `<tr>
+                    <td>${index + 1}</td>
+                    <td>${vocab.kanji}</td>
+                    <td>${vocab.hiragana}</td>
+                    <td>${vocab.romaji}</td>
+                    <td>${vocab.meaning}</td>
+                </tr>`;
+                tableBody.insertAdjacentHTML("beforeend", row);
+            });
+        }
+    </script>
+</body>
+</html>
