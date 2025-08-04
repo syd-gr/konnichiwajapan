@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        .quiz-container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        .question {
+            font-size: 1.2em;
+        }
+        .options {
+            margin-top: 15px;
+            text-align: left;
+        }
+        .options input {
+            margin-right: 10px;
+        }
+        .next-btn, .result-btn, #restart-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        .correct {
+            color: green;
+            font-weight: bold;
+        }
+        .incorrect {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <?php include 'header.php'; ?>
+
+        <div class="quiz-container" id="quiz-container">
+            <div id="question-container">
+                <div class="question" id="question"></div>
+                <div class="options" id="options"></div>
+                <button class="next-btn" id="action-btn">Show Answer</button>
+                <button class="result-btn" id="result-btn" style="display: none;">Show Result</button>
+            </div>
+
+            <div id="result-container" style="display: none;">
+                <h2>Your Score: <span id="score"></span>/<span id="total"></span></h2>
+                <button id="restart-btn">Restart Quiz</button>
+            </div>
+        </div>
+
+        <script>
+            const questions = [
+                {
+                    question: "What is the capital of Japan?",
+                    correct: "Tokyo",
+                    options: ["Osaka", "Kyoto", "Hiroshima", "Tokyo"]
+                },
+                {
+                    question: "What is the currency of Japan?",
+                    correct: "Yen",
+                    options: ["Won", "Dollar", "Euro", "Yen"]
+                },
+                {
+                    question: "Which island is the largest in Japan?",
+                    correct: "Honshu",
+                    options: ["Hokkaido", "Kyushu", "Shikoku", "Honshu"]
+                },
+                {
+                    question: "What is the highest mountain in Japan?",
+                    correct: "Mount Fuji",
+                    options: ["Mount Takao", "Mount Hakone", "Mount Rokko", "Mount Fuji"]
+                },
+                {
+                    question: "What is Japan's traditional theater form?",
+                    correct: "Kabuki",
+                    options: ["Opera", "Ballet", "Drama", "Kabuki"]
+                }
+            ];
+
+            let currentQuestionIndex = 0;
+            let score = 0;
+            let state = "show"; // "show" or "next"
+
+            const questionElement = document.getElementById("question");
+            const optionsElement = document.getElementById("options");
+            const actionButton = document.getElementById("action-btn");
+            const resultButton = document.getElementById("result-btn");
+            const resultContainer = document.getElementById("result-container");
+            const scoreElement = document.getElementById("score");
+            const totalElement = document.getElementById("total");
+
+            function loadQuestion() {
+                state = "show";
+                actionButton.textContent = "Show Answer";
+
+                const currentQuestion = questions[currentQuestionIndex];
+                questionElement.textContent = currentQuestion.question;
+
+                optionsElement.innerHTML = "";
+                currentQuestion.options.forEach(option => {
+                    const optionElement = document.createElement("div");
+                    optionElement.innerHTML = `
+                        <label>
+                            <input type="radio" name="option" value="${option}"> ${option}
+                        </label>
+                    `;
+                    optionsElement.appendChild(optionElement);
+                });
+            }
+
+            function highlightAnswer() {
+                const currentQuestion = questions[currentQuestionIndex];
+                const options = document.querySelectorAll("input[name='option']");
+
+                options.forEach(input => {
+                    const label = input.parentElement;
+                    input.disabled = true;
+
+                    if (input.value === currentQuestion.correct) {
+                        label.classList.add("correct");
+                    }
+
+                    if (input.checked && input.value !== currentQuestion.correct) {
+                        label.classList.add("incorrect");
+                    }
+                });
+            }
+
+            actionButton.addEventListener("click", () => {
+                const selectedOption = document.querySelector("input[name='option']:checked");
+
+                if (state === "show") {
+                    if (!selectedOption) {
+                        alert("Please select an option!");
+                        return;
+                    }
+
+                    const answer = selectedOption.value;
+                    if (answer === questions[currentQuestionIndex].correct) {
+                        score++;
+                    }
+
+                    highlightAnswer();
+
+                    state = "next";
+                    actionButton.textContent = "Next Question";
+                } else if (state === "next") {
+                    currentQuestionIndex++;
+
+                    if (currentQuestionIndex < questions.length) {
+                        loadQuestion();
+                    } else {
+                        document.getElementById("question-container").style.display = "none";
+                        resultContainer.style.display = "block";
+                        scoreElement.textContent = score;
+                        totalElement.textContent = questions.length;
+                        actionButton.style.display = "none";
+                        resultButton.style.display = "none";
+                    }
+                }
+            });
+
+            resultButton.addEventListener("click", () => {
+                document.getElementById("question-container").style.display = "none";
+                resultContainer.style.display = "block";
+                scoreElement.textContent = score;
+                totalElement.textContent = questions.length;
+            });
+
+            // 🆕 Restart button logic
+            document.getElementById("restart-btn").addEventListener("click", () => {
+                currentQuestionIndex = 0;
+                score = 0;
+                state = "show";
+
+                resultContainer.style.display = "none";
+                document.getElementById("question-container").style.display = "block";
+
+                actionButton.style.display = "inline-block";
+                actionButton.textContent = "Show Answer";
+                resultButton.style.display = "none";
+
+                loadQuestion();
+            });
+
+            // Initial load
+            loadQuestion();
+        </script>
+
+        <?php include 'footer.php'; ?>
+    </div>
+</body>
+</html>

@@ -1,204 +1,250 @@
-/* General Styles */
+/* Reset & base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    background-image: url('abc.jpg'); /* Add your background image path here */
-    background-size: cover; /* Make the background image cover the whole page */
-    background-position: center;
-    background-attachment: fixed; /* Keeps the background fixed while scrolling */
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f7f9fb;
+    color: #333;
+    line-height: 1.6;
+    padding: 0;
+    margin: 0;
 }
 
-.table-container {
-    max-width: 100%;
-    overflow-x: auto;
-}
-
-/* Excel Table Styles */
-.excel-table {
-    border-collapse: collapse;
-    width: 100%;
-    border: 1px solid #ddd;
-    table-layout: fixed;
-}
-
-.excel-table th, .excel-table td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: left;
-    overflow: hidden;
-    white-space: nowrap;
-}
-
-.excel-table th {
-    background-color: #f4f4f4;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-.excel-table td[contenteditable="true"] {
-    background-color: #fff;
-    outline: none;
-    cursor: text;
-}
-
-.excel-table td[contenteditable="true"]:focus {
-    border: 1px solid #007bff;
-    background-color: #e9f7ff;
-}
-
-/* Button Styles */
-button {
-    margin-bottom: 10px;
-    padding: 10px;
-    background-color: #b3d9ff; /* Light blue background */
-    color: #333; /* Dark text for contrast */
-    border: none;
-    cursor: pointer;
-    display: block; /* Ensure buttons are stacked vertically */
-    width: 100%;
-    border-radius: 5px; /* Optional: Rounded corners */
-    font-size: 18px; /* Increase font size */
-    font-weight: bold; /* Make the text bold */
-    text-transform: uppercase; /* Uppercase letters for bold effect */
-    letter-spacing: 1px; /* Slightly increase spacing between letters for style */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
-    transition: all 0.3s ease; /* Smooth transition for all changes */
-}
-
-button:hover {
-    background-color: #80bfff; /* Lighter blue on hover */
-    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15); /* Deepen shadow on hover */
-    transform: translateY(-2px); /* Lift the button up on hover */
-}
-
-iframe {
-    border: none;
-    width: 100%;
-    height: 600px;
-    margin-top: 10px;
-    display: none; /* Initially hidden */
-}
-
-/* Header Section */
+/* Header */
 .site-header {
-    background-image: url('abcd.jpg'); /* Background image for the header */
-    background-size: cover; /* Ensure the background image covers the header */
-    background-position: center; /* Center the image */
-    background-attachment: fixed; /* Keeps the image fixed while scrolling */
-    padding: 20px 40px; /* Add some space around the header */
+    background: linear-gradient(to right, #0088cc, #00c6ff);
+    color: white;
+    padding: 20px;
     text-align: center;
-    border-bottom: 2px solid #ddd; /* Border to separate the header from the content */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for a clean look */
-    position: relative; /* Ensure content is above the background image */
-    z-index: 1; /* Makes sure header content is on top */
-    color: white; /* Ensure text is visible on top of the image */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .header-content {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+    gap: 10px;
 }
 
 .page-title {
-    font-size: 2.5rem;
-    font-family: 'Noto Sans JP', sans-serif;
-    color: white; /* Ensure the title text is white for contrast */
-    margin: 0;
-}
-
-.header-buttons {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
-    justify-content: center; /* Center buttons when wrapping */
-    margin-top: 10px; /* Add some spacing between title and buttons */
-}
-
-.header-buttons button {
-    padding: 10px 20px;
-    font-size: 1rem;
-    color: #fff;
-    background-color: #007bff; /* A calm blue background */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.header-buttons button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    font-size: 2rem;
+    font-weight: 700;
 }
 
 .header-description {
     font-size: 1rem;
-    color: #fff;
     margin-top: 10px;
-    font-style: italic;
-    max-width: 1000px;
-    margin: 20px auto;
-    line-height: 1.6;
-    font-family: 'Noto Sans JP', sans-serif;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* Footer Section */
-.footer {
-    background-color: #333;
-    color: #fff;
+/* Navigation Buttons */
+.header-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.header-buttons button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #ffffff;
+    color: #0088cc;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.header-buttons button:hover {
+    background-color: #e0f7ff;
+    transform: scale(1.05);
+}
+
+/* Lesson Buttons Section */
+#lessonButtonsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px 10px;
+}
+
+#lessonButtonsContainer a {
+    display: block;
+    padding: 15px 25px;
+    background-color: #ffffff;
+    border: 2px solid #0088cc;
+    color: #0088cc;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: 0.3s;
     text-align: center;
+    min-width: 120px;
+}
+
+#lessonButtonsContainer a:hover {
+    background-color: #0088cc;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Table container (optional styling if needed) */
+.table-container {
     padding: 20px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow above footer */
+    overflow-x: auto;
 }
 
-.footer p {
-    margin: 0;
-    font-size: 1rem;
+/* Footer */
+.footer {
+    background-color: #f0f0f0;
+    color: #666;
+    text-align: center;
+    padding: 15px 10px;
+    font-size: 0.9rem;
+    border-top: 1px solid #ddd;
 }
 
-/* Mobile Responsiveness */
-@media screen and (max-width: 768px) {
-    .site-header {
-        padding: 15px 20px;
-    }
-
+/* Responsive styles */
+@media (max-width: 768px) {
     .page-title {
-        font-size: 1.8rem; /* Reduce the size for smaller screens */
-    }
-
-    .header-buttons {
-        flex-direction: column; /* Stack buttons vertically on small screens */
-        gap: 10px;
+        font-size: 1.5rem;
     }
 
     .header-description {
-        font-size: 0.9rem; /* Adjust description font size */
-        margin-top: 15px;
-    }
-
-    button {
-        width: 100%; /* Ensure buttons take full width on small screens */
-        padding: 12px;
-        font-size: 16px;
-    }
-}
-
-/* Mobile Small Screen Adjustments (Extra small screens) */
-@media screen and (max-width: 480px) {
-    .page-title {
-        font-size: 1.6rem; /* Further reduce the font size */
+        font-size: 0.9rem;
     }
 
     .header-buttons button {
-        font-size: 14px; /* Make buttons smaller */
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+
+    #lessonButtonsContainer a {
+        padding: 12px 18px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Sticky footer fix */
+html, body {
+    height: 100%;
+}
+
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.table-container {
+    flex: 1; /* Makes the content area grow to push the footer down */
+}
+
+.footer {
+    background-color: #f0f0f0;
+    color: #666;
+    text-align: center;
+    padding: 15px 10px;
+    font-size: 0.9rem;
+    border-top: 1px solid #ddd;
+}
+/* Header layout default (mobile: centered) */
+.site-header {
+    background: linear-gradient(to right, #0088cc, #00c6ff);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-description {
+    margin-top: 10px;
+    max-width: 600px;
+    margin: 15px auto 0 auto;
+    font-size: 1rem;
+    text-align: center;
+}
+
+/* PC version: row layout */
+@media (min-width: 768px) {
+    .header-content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+    }
+
+    .page-title {
+        font-size: 2rem;
+        font-weight: 700;
+        margin: 0;
+    }
+
+    .header-buttons {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
     }
 
     .header-description {
-        font-size: 0.8rem; /* Further reduce the description text size */
+        text-align: right;
+        margin-top: 20px;
+        max-width: 100%;
     }
 }
+
+.page-title a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.page-title a:hover {
+    color: #e0f7ff;
+}
+.site-header {
+    background-image: url('header-bg.jpg'); /* Replace with your actual image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.site-header::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Dark overlay */
+    z-index: 0;
+}
+
+.site-header > * {
+    position: relative;
+    z-index: 1;
+}
+

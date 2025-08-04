@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 1 Vocabulary</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="wrapper">
+<?php include 'header.php'; ?>
+    
+    <div class="table-container">
+    <table id="excelTable" class="excel-table">
+        <thead>
+            <tr>
+                <th colspan="5" style="text-align:center; font-size:18px;">JLPT N5 Lesson 1 All Vocabulary</th>
+            </tr>
+            <tr>
+                <th>S.N</th>
+                <th>KANJI</th>
+                <th>HIRAGANA</th>
+                <th>ROMANIZE</th>
+                <th>MEANING</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+    <script>
+        // Disable right-click and some DevTools shortcuts
+        document.addEventListener("contextmenu", e => e.preventDefault());
+        document.addEventListener("keydown", function (e) {
+            if (
+                e.key === "F12" ||
+                (e.ctrlKey && e.shiftKey && ["I", "J", "C"].includes(e.key)) ||
+                (e.ctrlKey && e.key === "U")
+            ) {
+                e.preventDefault();
+            }
+        });
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        const vocabulary = [
+        { kanji: "私", hiragana: "わたし", romaji: "watashi", meaning: "I, me" },
+        { kanji: "私たち", hiragana: "わたしたち", romaji: "watashitachi", meaning: "We" },
+        { kanji: "あなた", hiragana: "あなた", romaji: "anata", meaning: "You" },
+        { kanji: "あの人", hiragana: "あのひと", romaji: "ano hito", meaning: "That person, he, she" },
+        { kanji: "あの方", hiragana: "あのかた", romaji: "ano kata", meaning: "That person (polite)" },
+        { kanji: "皆さん", hiragana: "みなさん", romaji: "mina-san", meaning: "Everyone" },
+        { kanji: "～さん", hiragana: "～さん", romaji: "~san", meaning: "Mr., Ms. (honorific)" },
+        { kanji: "～ちゃん", hiragana: "～ちゃん", romaji: "~chan", meaning: "Suffix for young children" },
+        { kanji: "～君", hiragana: "～くん", romaji: "~kun", meaning: "Suffix for boys (casual)" },
+        { kanji: "～人", hiragana: "～じん", romaji: "~jin", meaning: "A national of ~ (e.g., 日本人: Japanese person)" },
+        { kanji: "先生", hiragana: "せんせい", romaji: "sensei", meaning: "Teacher, instructor" },
+        { kanji: "教師", hiragana: "きょうし", romaji: "kyoushi", meaning: "Teacher (used by oneself)" },
+        { kanji: "学生", hiragana: "がくせい", romaji: "gakusei", meaning: "Student" },
+        { kanji: "会社員", hiragana: "かいしゃいん", romaji: "kaishain", meaning: "Company employee" },
+        { kanji: "社員", hiragana: "しゃいん", romaji: "shain", meaning: "Employee of ~ company" },
+        { kanji: "銀行員", hiragana: "ぎんこういん", romaji: "ginkouin", meaning: "Bank employee" },
+        { kanji: "医者", hiragana: "いしゃ", romaji: "isha", meaning: "Doctor" },
+        { kanji: "研究者", hiragana: "けんきゅうしゃ", romaji: "kenkyuusha", meaning: "Researcher" },
+        { kanji: "エンジニア", hiragana: "エンジニア", romaji: "enjinia", meaning: "Engineer" },
+        { kanji: "大学", hiragana: "だいがく", romaji: "daigaku", meaning: "University, college" },
+        { kanji: "病院", hiragana: "びょういん", romaji: "byouin", meaning: "Hospital" },
+        { kanji: "電気", hiragana: "でんき", romaji: "denki", meaning: "Electricity, light" },
+        { kanji: "誰", hiragana: "だれ", romaji: "dare", meaning: "Who" },
+        { kanji: "～歳", hiragana: "～さい", romaji: "~sai", meaning: "~ years old" },
+        { kanji: "何歳", hiragana: "なんさい", romaji: "nansai", meaning: "How old" },
+        { kanji: "失礼ですが", hiragana: "しつれいですが", romaji: "shitsurei desu ga", meaning: "Excuse me, but ~" },
+        { kanji: "お名前は？", hiragana: "おなまえは？", romaji: "o-namae wa?", meaning: "What is your name?" },
+        { kanji: "初めまして", hiragana: "はじめまして", romaji: "hajimemashite", meaning: "Nice to meet you" },
+        { kanji: "～から来ました", hiragana: "～からきました", romaji: "~kara kimashita", meaning: "I came from ~" },
+        { kanji: "どうぞよろしく", hiragana: "どうぞよろしく", romaji: "douzo yoroshiku", meaning: "Pleased to meet you" },
+        { kanji: "はい", hiragana: "はい", romaji: "hai", meaning: "Yes" },
+        { kanji: "いいえ", hiragana: "いいえ", romaji: "iie", meaning: "No" }
+        ];
+
+        function populateTable() {
+            const tableBody = document.querySelector("#excelTable tbody");
+            tableBody.innerHTML = "";
+            vocabulary.forEach((word, index) => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${index + 1}</td>
+                    <td>${word.kanji}</td>
+                    <td>${word.hiragana}</td>
+                    <td>${word.romaji}</td>
+                    <td>${word.meaning}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", populateTable);
+    </script>
+    
+    <?php include 'footer.php'; ?>
+    </div>
+</body>
+</html>

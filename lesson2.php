@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 2 Vocabulary</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+<?php include 'header.php'; ?>
+    
+    <div class="table-container">
+        <table id="excelTable" class="excel-table">
+            <thead>
+                <tr>
+                <th colspan="5" style="text-align:center; font-size:18px;">JLPT N5 Lesson 2 All Vocabulary</th>
+                </tr>
+                <tr>
+                    <th>S.N</th>
+                    <th>KANJI</th>
+                    <th>HIRAGANA</th>
+                    <th>ROMANIZE</th>
+                    <th>MEANING</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script>
+        // Disable right-click and some DevTools shortcuts
+        document.addEventListener("contextmenu", e => e.preventDefault());
+        document.addEventListener("keydown", function (e) {
+            if (
+                e.key === "F12" ||
+                (e.ctrlKey && e.shiftKey && ["I", "J", "C"].includes(e.key)) ||
+                (e.ctrlKey && e.key === "U")
+            ) {
+                e.preventDefault();
+            }
+        });
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        const vocabulary = [
+            { kanji: "これ", hiragana: "これ", romaji: "kore", meaning: "This (thing here)" },
+            { kanji: "それ", hiragana: "それ", romaji: "sore", meaning: "That (thing near you)" },
+            { kanji: "あれ", hiragana: "あれ", romaji: "are", meaning: "That (thing over there)" },
+            { kanji: "この～", hiragana: "この～", romaji: "kono~", meaning: "This ~" },
+            { kanji: "その～", hiragana: "その～", romaji: "sono~", meaning: "That ~" },
+            { kanji: "あの～", hiragana: "あの～", romaji: "ano~", meaning: "That ~ (over there)" },
+            { kanji: "本", hiragana: "ほん", romaji: "hon", meaning: "Book" },
+            { kanji: "辞書", hiragana: "じしょ", romaji: "jisho", meaning: "Dictionary" },
+            { kanji: "雑誌", hiragana: "ざっし", romaji: "zasshi", meaning: "Magazine" },
+            { kanji: "新聞", hiragana: "しんぶん", romaji: "shinbun", meaning: "Newspaper" },
+            { kanji: "ノート", hiragana: "ノート", romaji: "nooto", meaning: "Notebook" },
+            { kanji: "手帳", hiragana: "てちょう", romaji: "techou", meaning: "Pocket notebook" },
+            { kanji: "名刺", hiragana: "めいし", romaji: "meishi", meaning: "Business card" },
+            { kanji: "カード", hiragana: "カード", romaji: "kaado", meaning: "Card" },
+            { kanji: "鉛筆", hiragana: "えんぴつ", romaji: "enpitsu", meaning: "Pencil" },
+            { kanji: "ボールペン", hiragana: "ボールペン", romaji: "boorupen", meaning: "Ballpoint pen" },
+            { kanji: "シャープペンシル", hiragana: "シャープペンシル", romaji: "shaapu penshiru", meaning: "Mechanical pencil" },
+            { kanji: "かぎ", hiragana: "かぎ", romaji: "kagi", meaning: "Key" },
+            { kanji: "時計", hiragana: "とけい", romaji: "tokei", meaning: "Watch, clock" },
+            { kanji: "傘", hiragana: "かさ", romaji: "kasa", meaning: "Umbrella" },
+            { kanji: "かばん", hiragana: "かばん", romaji: "kaban", meaning: "Bag" },
+            { kanji: "カセットテープ", hiragana: "カセットテープ", romaji: "kasetto teepu", meaning: "Cassette tape" },
+            { kanji: "テープレコーダー", hiragana: "テープレコーダー", romaji: "teepu rekoodaa", meaning: "Tape recorder" },
+            { kanji: "テレビ", hiragana: "テレビ", romaji: "terebi", meaning: "Television" },
+            { kanji: "ラジオ", hiragana: "ラジオ", romaji: "rajio", meaning: "Radio" },
+            { kanji: "カメラ", hiragana: "カメラ", romaji: "kamera", meaning: "Camera" },
+            { kanji: "コンピューター", hiragana: "コンピューター", romaji: "konpyuutaa", meaning: "Computer" },
+            { kanji: "車", hiragana: "くるま", romaji: "kuruma", meaning: "Car" },
+            { kanji: "机", hiragana: "つくえ", romaji: "tsukue", meaning: "Desk" },
+            { kanji: "椅子", hiragana: "いす", romaji: "isu", meaning: "Chair" }
+        ];
+
+        function populateTable() {
+            const tableBody = document.querySelector("#excelTable tbody");
+            tableBody.innerHTML = "";
+            vocabulary.forEach((word, index) => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${index + 1}</td>
+                    <td>${word.kanji}</td>
+                    <td>${word.hiragana}</td>
+                    <td>${word.romaji}</td>
+                    <td>${word.meaning}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", populateTable);
+    </script>
+    
+    <?php include 'footer.php'; ?>
+    </div>
+</body>
+</html>
