@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 1 Vocabulary</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="wrapper">
+<?php include 'header.php'; ?>
+    
+    <div class="table-container">
+    <table id="excelTable" class="excel-table">
+        <thead>
+            <tr>
+                <th colspan="5" style="text-align:center; font-size:18px;">JLPT N5 Lesson 1 All Vocabulary</th>
+            </tr>
+            <tr>
+                <th>S.N</th>
+                <th>KANJI</th>
+                <th>HIRAGANA</th>
+                <th>ROMANIZE</th>
+                <th>MEANING</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+    <script>
+        // Disable right-click and some DevTools shortcuts
+        document.addEventListener("contextmenu", e => e.preventDefault());
+        document.addEventListener("keydown", function (e) {
+            if (
+                e.key === "F12" ||
+                (e.ctrlKey && e.shiftKey && ["I", "J", "C"].includes(e.key)) ||
+                (e.ctrlKey && e.key === "U")
+            ) {
+                e.preventDefault();
+            }
+        });
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        const vocabulary = [
+        {
+        "kanji": "立ちます",
+        "hiragana": "たちます",
+        "romaji": "",
+        "meaning": "stand"
+    },
+    {
+        "kanji": "座ります",
+        "hiragana": "すわります",
+        "romaji": "",
+        "meaning": "sit"
+    },
+    {
+        "kanji": "使います",
+        "hiragana": "つかいます",
+        "romaji": "",
+        "meaning": "use, use"
+    },
+    {
+        "kanji": "置きます",
+        "hiragana": "おきます",
+        "romaji": "",
+        "meaning": "put"
+    },
+    {
+        "kanji": "作ります，造ります",
+        "hiragana": "つくります",
+        "romaji": "",
+        "meaning": "making, manufacturing, manufacturing"
+    },
+    {
+        "kanji": "売ります",
+        "hiragana": "うります",
+        "romaji": "",
+        "meaning": "sell"
+    },
+    {
+        "kanji": "知ります",
+        "hiragana": "しります",
+        "romaji": "",
+        "meaning": "know"
+    },
+    {
+        "kanji": "住みます",
+        "hiragana": "すみます",
+        "romaji": "",
+        "meaning": "live in"
+    },
+    {
+        "kanji": "研究します",
+        "hiragana": "けんきゅうします",
+        "romaji": "",
+        "meaning": "research"
+    },
+    {
+        "kanji": "知って います",
+        "hiragana": "しって います",
+        "romaji": "",
+        "meaning": "know"
+    },
+    {
+        "kanji": "住んで います [大阪に～]",
+        "hiragana": "すんで います [おおさかに～]",
+        "romaji": "",
+        "meaning": "live [in Osaka]"
+    },
+    {
+        "kanji": "資料",
+        "hiragana": "しりょう",
+        "romaji": "",
+        "meaning": "documents, materials"
+    },
+    {
+        "kanji": "",
+        "hiragana": "カタログ",
+        "romaji": "",
+        "meaning": "catalog"
+    },
+    {
+        "kanji": "時刻表",
+        "hiragana": "じこくひょう",
+        "romaji": "",
+        "meaning": "train timetables"
+    },
+    {
+        "kanji": "服",
+        "hiragana": "ふく",
+        "romaji": "",
+        "meaning": "clothes"
+    },
+    {
+        "kanji": "製品",
+        "hiragana": "せいひん",
+        "romaji": "",
+        "meaning": "product"
+    },
+    {
+        "kanji": "",
+        "hiragana": "ソフト",
+        "romaji": "",
+        "meaning": "software"
+    },
+    {
+        "kanji": "専門",
+        "hiragana": "せんもん",
+        "romaji": "",
+        "meaning": "specialize"
+    },
+    {
+        "kanji": "歯医者",
+        "hiragana": "はいしゃ",
+        "romaji": "",
+        "meaning": "dentist"
+    },
+    {
+        "kanji": "床屋",
+        "hiragana": "とこや",
+        "romaji": "",
+        "meaning": "Hair salon"
+    },
+    {
+        "kanji": "",
+        "hiragana": "プレイガイド",
+        "romaji": "",
+        "meaning": "ticket office (in the theater)"
+    },
+    {
+        "kanji": "独身",
+        "hiragana": "どくしん",
+        "romaji": "",
+        "meaning": "alone"
+    },
+    {
+        "kanji": "特に",
+        "hiragana": "とくに",
+        "romaji": "",
+        "meaning": "especially"
+    },
+    {
+        "kanji": "",
+        "hiragana": "思い出します",
+        "romaji": "",
+        "meaning": "remember, recall"
+    },
+    {
+        "kanji": "",
+        "hiragana": "ご家族",
+        "romaji": "",
+        "meaning": "family (for others)"
+    },
+    {
+        "kanji": "",
+        "hiragana": "いらっしゃいます",
+        "romaji": "",
+        "meaning": "Respect for 「い ま す」"
+    },
+    {
+        "kanji": "",
+        "hiragana": "高校",
+        "romaji": "",
+        "meaning": "high school"
+    }
+        ];
+
+        function populateTable() {
+            const tableBody = document.querySelector("#excelTable tbody");
+            tableBody.innerHTML = "";
+            vocabulary.forEach((word, index) => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${index + 1}</td>
+                    <td>${word.kanji}</td>
+                    <td>${word.hiragana}</td>
+                    <td>${word.romaji}</td>
+                    <td>${word.meaning}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", populateTable);
+    </script>
+    
+    <?php include 'footer.php'; ?>
+    </div>
+</body>
+</html>

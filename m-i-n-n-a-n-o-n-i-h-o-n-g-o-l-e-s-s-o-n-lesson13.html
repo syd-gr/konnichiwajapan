@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 1 Vocabulary</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="wrapper">
+<?php include 'header.php'; ?>
+    
+    <div class="table-container">
+    <table id="excelTable" class="excel-table">
+        <thead>
+            <tr>
+                <th colspan="5" style="text-align:center; font-size:18px;">JLPT N5 Lesson 13 All Vocabulary</th>
+            </tr>
+            <tr>
+                <th>S.N</th>
+                <th>KANJI</th>
+                <th>HIRAGANA</th>
+                <th>ROMANIZE</th>
+                <th>MEANING</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+    <script>
+        // Disable right-click and some DevTools shortcuts
+        document.addEventListener("contextmenu", e => e.preventDefault());
+        document.addEventListener("keydown", function (e) {
+            if (
+                e.key === "F12" ||
+                (e.ctrlKey && e.shiftKey && ["I", "J", "C"].includes(e.key)) ||
+                (e.ctrlKey && e.key === "U")
+            ) {
+                e.preventDefault();
+            }
+        });
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        const vocabulary = [
+            { kanji: "教室", hiragana: "きょうしつ", romaji: "kyoushitsu", meaning: "Classroom" },
+            { kanji: "手帳", hiragana: "てちょう", romaji: "techou", meaning: "Notebook, planner" },
+            { kanji: "辞書", hiragana: "じしょ", romaji: "jisho", meaning: "Dictionary" },
+            { kanji: "時計", hiragana: "とけい", romaji: "tokei", meaning: "Clock, watch" },
+            { kanji: "紙", hiragana: "かみ", romaji: "kami", meaning: "Paper" },
+            { kanji: "カメラ", hiragana: "カメラ", romaji: "kamera", meaning: "Camera" },
+            { kanji: "コンピュータ", hiragana: "コンピュータ", romaji: "konpyu-ta", meaning: "Computer" },
+            { kanji: "電話", hiragana: "でんわ", romaji: "denwa", meaning: "Telephone" },
+            { kanji: "郵便局", hiragana: "ゆうびんきょく", romaji: "yuubinkyoku", meaning: "Post office" },
+            { kanji: "駅", hiragana: "えき", romaji: "eki", meaning: "Station" },
+            { kanji: "銀行", hiragana: "ぎんこう", romaji: "ginkou", meaning: "Bank" },
+            { kanji: "スーパー", hiragana: "スーパー", romaji: "su-pa", meaning: "Supermarket" },
+            { kanji: "映画館", hiragana: "えいがかん", romaji: "eigakan", meaning: "Movie theater" },
+            { kanji: "店", hiragana: "みせ", romaji: "mise", meaning: "Shop" },
+            { kanji: "美術館", hiragana: "びじゅつかん", romaji: "bijutsukan", meaning: "Art museum" },
+            { kanji: "公園", hiragana: "こうえん", romaji: "kouen", meaning: "Park" },
+            { kanji: "病院", hiragana: "びょういん", romaji: "byouin", meaning: "Hospital" },
+            { kanji: "図書館", hiragana: "としょかん", romaji: "toshokan", meaning: "Library" },
+            { kanji: "美術", hiragana: "びじゅつ", romaji: "bijutsu", meaning: "Art" },
+            { kanji: "新聞", hiragana: "しんぶん", romaji: "shinbun", meaning: "Newspaper" },
+            { kanji: "テレビ", hiragana: "テレビ", romaji: "terebi", meaning: "Television" },
+            { kanji: "ラジオ", hiragana: "ラジオ", romaji: "rajio", meaning: "Radio" },
+            { kanji: "雑誌", hiragana: "ざっし", romaji: "zasshi", meaning: "Magazine" },
+            { kanji: "漫画", hiragana: "まんが", romaji: "manga", meaning: "Comics" },
+            { kanji: "小説", hiragana: "しょうせつ", romaji: "shousetsu", meaning: "Novel" },
+            { kanji: "週刊誌", hiragana: "しゅうかんし", romaji: "shuukanshi", meaning: "Weekly magazine" }
+        ];
+
+        function populateTable() {
+            const tableBody = document.querySelector("#excelTable tbody");
+            tableBody.innerHTML = "";
+            vocabulary.forEach((word, index) => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${index + 1}</td>
+                    <td>${word.kanji}</td>
+                    <td>${word.hiragana}</td>
+                    <td>${word.romaji}</td>
+                    <td>${word.meaning}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", populateTable);
+    </script>
+    
+    <?php include 'footer.php'; ?>
+    </div>
+</body>
+</html>
