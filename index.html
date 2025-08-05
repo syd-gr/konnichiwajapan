@@ -4,6 +4,29 @@
   <meta charset="UTF-8">
   <title>Konnichiwa Japan</title>
   <style>
+    .section-button {
+    display: block;
+    width: 100%;
+    background-color: #e0b9b9;
+    border: 1px solid #ccc;
+    color: #333;
+    padding: 12px;
+    margin: 6px 0;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;       /* Increased text size */
+    font-weight: bold;     /* Bold text */
+    border-radius: 6px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.section-button:hover {
+    color: white;
+    border-color: #005f8d;
+}
+
+  
+    
       
     .center-button {
     text-align: center;
@@ -245,21 +268,21 @@
           <div class="section-header" onclick="toggleSection(this)">All Lesson Vocab</div>
           <div class="section-content">
             <!-- Links from Lesson 1–15 -->
-            <a href="m-i-n-n-a-n-o-n-i-h-o-n-g-o-l-e-s-s-o-n-lesson1.html">Page 1</a>
-            <a href="#">Page 2</a>
-            <a href="#">Page 3</a>
-            <!-- ... more ... -->
-            <a href="#">Page 15</a>
+            <a class="section-button" href="m-i-n-n-a-n-o-n-i-h-o-n-g-o-l-e-s-s-o-n-lesson1.html">Lesson1 Vocabulary</a>
+            <a class="section-button" href="#">Lesson2 Vocabulary</a>
+            <a class="section-button" href="#">Lesson3 Vocabulary</a>
+            <a class="section-button" href="#">Lesson4 Vocabulary</a>
+            <a class="section-button" href="#">Lesson5 Vocabulary</a>
           </div>
         </div>
 
         <div class="section">
           <div class="section-header" onclick="toggleSection(this)">Learn With Quiz</div>
           <div class="section-content">
-            <a href="#">Japan GK Quiz</a>
-            <a href="#">Lesson1 Vocabulary Quiz</a>
-            <!-- ... more ... -->
-            <a href="#">Lesson15 Vocabulary Quiz</a>
+            <a class="section-button" href="#">Japan GK Quiz</a>
+            <a class="section-button" href="#">Lesson1 Vocabulary Quiz</a>
+            <a class="section-button" href="#">Lesson2 Vocabulary Quiz</a>
+            <a class="section-button" href="#">Lesson3 Vocabulary Quiz</a>
           </div>
         </div>
 
