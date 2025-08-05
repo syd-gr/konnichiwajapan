@@ -3,47 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lesson 1 Vocabulary</title>
-    <link rel="stylesheet" href="header-footer.css">
-    <link rel="stylesheet" href="lesson-content.css">
+    <title>Lesson 4 Vocabulary</title>
+    <link rel="stylesheet" href="lesson.css">
+    <style>
+        
+    
+    </style>
 </head>
 <body>
     
+    <div class="container">
     <div class="wrapper">
+        <!-- Header Section -->
         <header class="site-header">
-        <div class="header-content">
-            <h1 class="page-title">
-                <a href="index.php">Konnichiwa Japan</a>
-            </h1>
-        <div class="header-buttons">
-            <button onclick="location.href='index.php'">Home</button>
-            <button onclick="location.href='about.php'">About</button>
-            <button onclick="location.href='support.php'">Support Us</button>
-        </div>
-        </div>
-        <p class="header-description">Learn Japanese with passion, explore a new culture, and embrace the beauty of language!</p>
+            <div class="header-content">
+                <h1 class="page-title">
+                    <a href="index.html">Konnichiwa Japan</a>
+                </h1>
+                <div class="header-buttons">
+                    <button onclick="location.href='index.html'">Home</button>
+                    <button onclick="location.href='about.html'">About</button>
+                    <button onclick="location.href='support.html'">Support Us</button>
+                </div>
+            </div>
+            <p class="header-description">
+                Learn Japanese with passion, explore a new culture, and embrace the beauty of language!
+            </p>
         </header>
-    
-    <div class="table-container">
-    <table id="excelTable" class="excel-table">
-        <thead>
-            <tr>
-                <th colspan="5" style="text-align:center; font-size:18px;">JLPT N5 Lesson 4 All Vocabulary</th>
-            </tr>
-            <tr>
-                <th>S.N</th>
-                <th>KANJI</th>
-                <th>HIRAGANA</th>
-                <th>ROMANIZE</th>
-                <th>MEANING</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
-</div>
 
+        <!-- Table Section -->
+        <div class="table-container">
+            <table id="excelTable" class="excel-table">
+                <thead>
+                    <tr>
+                        <th colspan="5" style="text-align:center; font-size:18px;">JLPT N5 Lesson 1 All Vocabulary</th>
+                    </tr>
+                    <tr>
+                        <th>S.N</th>
+                        <th>KANJI</th>
+                        <th>HIRAGANA</th>
+                        <th>ROMANIZE</th>
+                        <th>MEANING</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <!-- Footer Section -->
+        <footer class="footer">
+            <p>&copy; 2025 Konnichiwa Japan. All rights reserved.</p>
+        </footer>
+    </div>
+    </div>
+
+    <!-- JS Script -->
     <script>
-        // Disable right-click and some DevTools shortcuts
         document.addEventListener("contextmenu", e => e.preventDefault());
         document.addEventListener("keydown", function (e) {
             if (
@@ -54,51 +69,40 @@
                 e.preventDefault();
             }
         });
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
 
         const vocabulary = [
-        { kanji: "時間", hiragana: "じかん", romaji: "jikan", meaning: "Time" },
-            { kanji: "日", hiragana: "ひ", romaji: "hi", meaning: "Day" },
-            { kanji: "月", hiragana: "つき", romaji: "tsuki", meaning: "Month" },
-            { kanji: "年", hiragana: "ねん", romaji: "nen", meaning: "Year" },
-            { kanji: "分", hiragana: "ふん", romaji: "fun", meaning: "Minute" },
-            { kanji: "今", hiragana: "いま", romaji: "ima", meaning: "Now" },
-            { kanji: "午前", hiragana: "ごぜん", romaji: "gozen", meaning: "AM" },
-            { kanji: "午後", hiragana: "ごご", romaji: "gogo", meaning: "PM" },
-            { kanji: "時々", hiragana: "ときどき", romaji: "tokidoki", meaning: "Sometimes" },
-            { kanji: "明日", hiragana: "あした", romaji: "ashita", meaning: "Tomorrow" },
-            { kanji: "昨日", hiragana: "きのう", romaji: "kinou", meaning: "Yesterday" },
-            { kanji: "毎日", hiragana: "まいにち", romaji: "mainichi", meaning: "Every day" },
-            { kanji: "毎週", hiragana: "まいしゅう", romaji: "maishuu", meaning: "Every week" },
-            { kanji: "毎月", hiragana: "まいつき", romaji: "maitsuki", meaning: "Every month" },
-            { kanji: "毎年", hiragana: "まいねん", romaji: "mainen", meaning: "Every year" },
-            { kanji: "後", hiragana: "あと", romaji: "ato", meaning: "After" },
-            { kanji: "前", hiragana: "まえ", romaji: "mae", meaning: "Before" },
-            { kanji: "昼", hiragana: "ひる", romaji: "hiru", meaning: "Noon" },
-            { kanji: "夜", hiragana: "よる", romaji: "yoru", meaning: "Night" },
-            { kanji: "今週", hiragana: "こんしゅう", romaji: "konshuu", meaning: "This week" },
-            { kanji: "来週", hiragana: "らいしゅう", romaji: "raishuu", meaning: "Next week" },
-            { kanji: "先週", hiragana: "せんしゅう", romaji: "senshuu", meaning: "Last week" },
-            { kanji: "今月", hiragana: "こんげつ", romaji: "kongetsu", meaning: "This month" },
-            { kanji: "来月", hiragana: "らいげつ", romaji: "raigetsu", meaning: "Next month" },
-            { kanji: "先月", hiragana: "せんげつ", romaji: "sengetsu", meaning: "Last month" },
-            { kanji: "時", hiragana: "とき", romaji: "toki", meaning: "Time, when" },
-            { kanji: "今晩", hiragana: "こんばん", romaji: "konban", meaning: "This evening" },
-            { kanji: "朝", hiragana: "あさ", romaji: "asa", meaning: "Morning" },
-            { kanji: "昼食", hiragana: "ちゅうしょく", romaji: "chuushoku", meaning: "Lunch" },
-            { kanji: "晩ご飯", hiragana: "ばんごはん", romaji: "bangohan", meaning: "Dinner" }
+            { kanji: "私", hiragana: "わたし", romaji: "watashi", meaning: "I, me" },
+            { kanji: "私たち", hiragana: "わたしたち", romaji: "watashitachi", meaning: "We" },
+            { kanji: "あなた", hiragana: "あなた", romaji: "anata", meaning: "You" },
+            { kanji: "あの人", hiragana: "あのひと", romaji: "ano hito", meaning: "That person, he, she" },
+            { kanji: "あの方", hiragana: "あのかた", romaji: "ano kata", meaning: "That person (polite)" },
+            { kanji: "皆さん", hiragana: "みなさん", romaji: "mina-san", meaning: "Everyone" },
+            { kanji: "～さん", hiragana: "～さん", romaji: "~san", meaning: "Mr., Ms. (honorific)" },
+            { kanji: "～ちゃん", hiragana: "～ちゃん", romaji: "~chan", meaning: "Suffix for young children" },
+            { kanji: "～君", hiragana: "～くん", romaji: "~kun", meaning: "Suffix for boys (casual)" },
+            { kanji: "～人", hiragana: "～じん", romaji: "~jin", meaning: "A national of ~ (e.g., 日本人: Japanese person)" },
+            { kanji: "先生", hiragana: "せんせい", romaji: "sensei", meaning: "Teacher, instructor" },
+            { kanji: "教師", hiragana: "きょうし", romaji: "kyoushi", meaning: "Teacher (used by oneself)" },
+            { kanji: "学生", hiragana: "がくせい", romaji: "gakusei", meaning: "Student" },
+            { kanji: "会社員", hiragana: "かいしゃいん", romaji: "kaishain", meaning: "Company employee" },
+            { kanji: "社員", hiragana: "しゃいん", romaji: "shain", meaning: "Employee of ~ company" },
+            { kanji: "銀行員", hiragana: "ぎんこういん", romaji: "ginkouin", meaning: "Bank employee" },
+            { kanji: "医者", hiragana: "いしゃ", romaji: "isha", meaning: "Doctor" },
+            { kanji: "研究者", hiragana: "けんきゅうしゃ", romaji: "kenkyuusha", meaning: "Researcher" },
+            { kanji: "エンジニア", hiragana: "エンジニア", romaji: "enjinia", meaning: "Engineer" },
+            { kanji: "大学", hiragana: "だいがく", romaji: "daigaku", meaning: "University, college" },
+            { kanji: "病院", hiragana: "びょういん", romaji: "byouin", meaning: "Hospital" },
+            { kanji: "電気", hiragana: "でんき", romaji: "denki", meaning: "Electricity, light" },
+            { kanji: "誰", hiragana: "だれ", romaji: "dare", meaning: "Who" },
+            { kanji: "～歳", hiragana: "～さい", romaji: "~sai", meaning: "~ years old" },
+            { kanji: "何歳", hiragana: "なんさい", romaji: "nansai", meaning: "How old" },
+            { kanji: "失礼ですが", hiragana: "しつれいですが", romaji: "shitsurei desu ga", meaning: "Excuse me, but ~" },
+            { kanji: "お名前は？", hiragana: "おなまえは？", romaji: "o-namae wa?", meaning: "What is your name?" },
+            { kanji: "初めまして", hiragana: "はじめまして", romaji: "hajimemashite", meaning: "Nice to meet you" },
+            { kanji: "～から来ました", hiragana: "～からきました", romaji: "~kara kimashita", meaning: "I came from ~" },
+            { kanji: "どうぞよろしく", hiragana: "どうぞよろしく", romaji: "douzo yoroshiku", meaning: "Pleased to meet you" },
+            { kanji: "はい", hiragana: "はい", romaji: "hai", meaning: "Yes" },
+            { kanji: "いいえ", hiragana: "いいえ", romaji: "iie", meaning: "No" }
         ];
 
         function populateTable() {
@@ -119,9 +123,5 @@
 
         document.addEventListener("DOMContentLoaded", populateTable);
     </script>
-    
-<footer class="footer">
-        <p>&copy; 2025 Konnichiwa Japan. All rights reserved.</p>
-        </footer>    </div>
 </body>
 </html>
