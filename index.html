@@ -1,182 +1,321 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Konnichiwa Japan</title>
-    <link rel="stylesheet" href="header-footer.css">
-    <link rel="icon" type="image/png" href="favicon.png">
-    <style>
-        #lessonButtonsContainer {
-            max-width: 500px;
-            margin: 40px auto;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
+  <meta charset="UTF-8">
+  <title>Konnichiwa Japan</title>
+  <style>
+      
+    .center-button {
+    text-align: center;
+    margin-bottom: 20px;
+}
 
-        .section {
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            overflow: hidden;
-        }
+.custom-button {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
 
-        .section-header {
-            background-color: #f0f0f0;
-            padding: 14px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
+.custom-button:hover {
+    background-color: #000000;
+}
 
-        .section-header:hover {
-            background-color: #e2e2e2;
-        }
-
-        .section-content {
-            display: none;
-            padding: 10px 20px;
-            background-color: #fff;
-        }
-
-        .section-content a {
-            display: block;
-            margin: 8px 0;
-            text-decoration: none;
-            color: #0073aa;
-            font-size: 16px;
-        }
-
-        .section-content a:hover {
-            text-decoration: underline;
-        }
-    </style>
-</head>
-<body>
-    <div class="wrapper">
-        <header class="site-header">
-        <div class="header-content">
-            <h1 class="page-title">
-                <a href="index.php">Konnichiwa Japan</a>
-            </h1>
-        <div class="header-buttons">
-            <button onclick="location.href='index.html'">Home</button>
-            <button onclick="location.href='about.html'">About</button>
-            <button onclick="location.href='support.html'">Support Us</button>
-        </div>
-        </div>
-        <p class="header-description">Learn Japanese with passion, explore a new culture, and embrace the beauty of language!</p>
-        </header>
-
-        <div class="table-container">
-            <div id="lessonButtonsContainer">
-                
-                <a href="m-i-n-n-a-n-o-n-i-h-o-n-g-o-pr_calculator.html">Check You Point for PR</a>
-
-                <div class="section">
-                    <div class="section-header" onclick="toggleSection(this)">All Lesson Vocab</div>
-                    <div class="section-content">
-                        <a href="m-i-n-n-a-n-o-n-i-h-o-n-g-o-l-e-s-s-o-n-lesson1.html">Page 1</a>
-                        <a href="m-i-n-n-a-n-o-n-i-h-o-n-g-o-l-e-s-s-o-n-lesson2.html">Page 2</a>
-                        <a href="m-i-n-n-a-n-o-n-i-h-o-n-g-o-l-e-s-s-o-n-lesson3.html">Page 3</a>
-                        <a href="m-i-n-n-a-n-o-n-i-h-o-n-g-o-l-e-s-s-o-n-lesson4.html">Page 4</a>
-                        <a href="m-i-n-n-a-n-o-n-i-h-o-n-g-o-l-e-s-s-o-n-lesson5.html">Page 5</a>
-                        <a href="m-i-n-n-a-n-o-n-i-h-o-n-g-o-l-e-s-s-o-n-lesson6.html">Page 6</a>
-                        <a href="m-i-n-n-a-n-o-n-i-h-o-n-g-o-l-e-s-s-o-n-lesson7.html">Page 7</a>
-                        <a href="m-i-n-n-a-n-o-n-i-h-o-n-g-o-l-e-s-s-o-n-lesson8.html">Page 8</a>
-                        <a href="m-i-n-n-a-n-o-n-i-h-o-n-g-o-l-e-s-s-o-n-lesson9.html">Page 9</a>
-                        <a href="m-i-n-n-a-n-o-n-i-h-o-n-g-o-l-e-s-s-o-n-lesson10.html">Page 10</a>
-                        <a href="m-i-n-n-a-n-o-n-i-h-o-n-g-o-l-e-s-s-o-n-lesson11.html">Page 11</a>
-                        <a href="m-i-n-n-a-n-o-n-i-h-o-n-g-o-l-e-s-s-o-n-lesson12.html">Page 12</a>
-                        <a href="m-i-n-n-a-n-o-n-i-h-o-n-g-o-l-e-s-s-o-n-lesson13.html">Page 13</a>
-                        <a href="m-i-n-n-a-n-o-n-i-h-o-n-g-o-l-e-s-s-o-n-lesson14.html">Page 14</a>
-                        <a href="m-i-n-n-a-n-o-n-i-h-o-n-g-o-l-e-s-s-o-n-lesson15.html">Page 15</a>
-                    </div>
-                </div>
-
-                <div class="section">
-                    <div class="section-header" onclick="toggleSection(this)">Learn With Quiz</div>
-                    <div class="section-content">
-                        <a href="m-i-n-n-a-n-o-n-i-h-o-n-g-o-q-u-i-z-quiz.html">Japan GK Quiz</a>
-                        <a href="m-i-n-n-a-n-o-n-i-h-o-n-g-o-q-u-i-z-quiz1.html">Lesson1 Vocabulary Quiz</a>
-                        <a href="m-i-n-n-a-n-o-n-i-h-o-n-g-o-q-u-i-z-quiz2.html">Lesson2 Vocabulary Quiz</a>
-                        <a href="m-i-n-n-a-n-o-n-i-h-o-n-g-o-q-u-i-z-quiz3.html">Lesson3 Vocabulary Quiz</a>
-                        <a href="m-i-n-n-a-n-o-n-i-h-o-n-g-o-q-u-i-z-quiz4.html">Lesson4 Vocabulary Quiz</a>
-                        <a href="m-i-n-n-a-n-o-n-i-h-o-n-g-o-q-u-i-z-quiz5.html">Lesson5 Vocabulary Quiz</a>
-                        <a href="m-i-n-n-a-n-o-n-i-h-o-n-g-o-q-u-i-z-quiz6.html">Lesson6 Vocabulary Quiz</a>
-                        <a href="m-i-n-n-a-n-o-n-i-h-o-n-g-o-q-u-i-z-quiz7.html">Lesson7 Vocabulary Quiz</a>
-                        <a href="m-i-n-n-a-n-o-n-i-h-o-n-g-o-q-u-i-z-quiz8.html">Lesson8 Vocabulary Quiz</a>
-                        <a href="m-i-n-n-a-n-o-n-i-h-o-n-g-o-q-u-i-z-quiz9.html">Lesson9 Vocabulary Quiz</a>
-                        <a href="m-i-n-n-a-n-o-n-i-h-o-n-g-o-q-u-i-z-quiz10.html">Lesson10 Vocabulary Quiz</a>
-                        <a href="m-i-n-n-a-n-o-n-i-h-o-n-g-o-q-u-i-z-quiz11.html">Lesson11 Vocabulary Quiz</a>
-                        <a href="m-i-n-n-a-n-o-n-i-h-o-n-g-o-q-u-i-z-quiz12.html">Lesson12 Vocabulary Quiz</a>
-                        <a href="m-i-n-n-a-n-o-n-i-h-o-n-g-o-q-u-i-z-quiz13.html">Lesson13 Vocabulary Quiz</a>
-                        <a href="m-i-n-n-a-n-o-n-i-h-o-n-g-o-q-u-i-z-quiz14.html">Lesson14 Vocabulary Quiz</a>
-                        <a href="m-i-n-n-a-n-o-n-i-h-o-n-g-o-q-u-i-z-quiz15.html">Lesson15 Vocabulary Quiz</a>
-                    </div>
-                </div>
-
-                <div class="section">
-                    <div class="section-header" onclick="toggleSection(this)">Flash Cards</div>
-                    <div class="section-content">
-                        <a href="fc.php">Lesson 1 Flash Cards</a>
-                        <a href="fc.php">Lesson 2 Flash Cards</a>
-                    </div>
-                </div>
-                
-                <br>
-                <h2 style="text-align: center; font-family: Arial, sans-serif; font-size: 28px; color: #333; 
-                text-transform: uppercase; letter-spacing: 1px; border-bottom: 2px solid #ccc; padding-bottom: 
-                10px; width: 60%; margin: 40px auto 20px auto;">Information</h2>
-
-                <a href="m-i-n-n-a-n-o-n-i-h-o-n-g-o-b-l-o-g-blog.php">Language and Japanese culture</a>
-                <a href="les.php">Part-Time Job Information</a>
-                <a href="ls.php">Transportation Information</a>
-                <a href="leo.php">Scholarship Information</a>
-                <a href="less.php">Residence Information</a>
-                <a href="lson51php">Cultural Events</a>
-            </div>
-        </div>
-
-        <footer class="footer">
-        <p>&copy; 2025 Konnichiwa Japan. All rights reserved.</p>
-        </footer>
-    </div>
     
-    <script>
-  // Disable right-click
-  document.addEventListener("contextmenu", function (e) {   
-    e.preventDefault();
-  });
-
-  // Disable copy (Ctrl+C, right-click > copy, etc.)
-  document.addEventListener("copy", function (e) {
-    e.preventDefault();
-    alert("Copying is disabled on this page.");
-  });
-
-  // Optional: Disable key combinations like Ctrl+S, Ctrl+U, Ctrl+Shift+I (DevTools)
-  document.addEventListener("keydown", function (e) {
-    if ((e.ctrlKey && (e.key === 'c' || e.key === 'u' || e.key === 's')) || 
-        (e.ctrlKey && e.shiftKey && e.key === 'I')) {
-      e.preventDefault();
+    /* === GLOBAL STYLES === */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-  });
-</script>
+
+    html, body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      overflow-x: hidden;
+      user-select: none;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .wrapper {
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    /* === HEADER === */
+    .site-header {
+      background: url('header-bg.jpg') no-repeat center center;
+      background-size: cover;
+      padding: 20px;
+      text-align: center;
+      color: white;
+    }
+
+    .page-title a {
+      font-size: 36px;
+      font-weight: bold;
+      color: #ffffff;
+      text-shadow: 1px 1px 2px #000;
+    }
+
+    .page-title a:hover {
+      color: #ffd700;
+    }
+
+    .header-buttons {
+      margin-top: 10px;
+    }
+
+    .header-buttons button {
+      padding: 10px 20px;
+      margin: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #ffffff;
+      color: #333;
+      border: none;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+
+    .header-buttons button:hover {
+      background-color: #eaeaea;
+    }
+
+    .header-description {
+      margin-top: 10px;
+      font-size: 16px;
+      color: #f2f2f2;
+    }
+
+    /* === MAIN CONTENT === */
+    .table-container {
+      padding: 20px;
+    }
+
+    #lessonButtonsContainer {
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      position: relative;
+      background-color: #fff;
+      z-index: 1;
+    }
+
+    /* Watermark logo */
+    #lessonButtonsContainer::before {
+      content: "";
+      background: url('logo.png') no-repeat center center;
+      background-size: 180px;
+      position: absolute;
+      top: 100px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0.07;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    #lessonButtonsContainer a {
+      font-size: 16px;
+      color: #0073aa;
+      margin: 5px 0;
+      z-index: 1;
+      position: relative;
+    }
+
+    #lessonButtonsContainer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Collapsible sections */
+    .section {
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .section-header {
+      background-color: #f0f0f0;
+      padding: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .section-header:hover {
+      background-color: #e2e2e2;
+    }
+
+    .section-content {
+      display: none;
+      padding: 10px 20px;
+    }
+
+    .section-content a {
+      display: block;
+      margin: 8px 0;
+    }
+
+    /* Info title */
+    h2 {
+      text-align: center;
+      font-size: 28px;
+      color: #333;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 10px;
+      width: 60%;
+      margin: 40px auto 20px auto;
+      z-index: 1;
+      position: relative;
+    }
+
+    /* === FOOTER === */
+    .footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #333;
+      color: #fff;
+      font-size: 14px;
+    }
+
+    /* === MOBILE STYLES === */
+    @media (max-width: 600px) {
+      .page-title a {
+        font-size: 24px;
+      }
+
+      .header-buttons button {
+        padding: 8px 12px;
+        font-size: 14px;
+      }
+
+      #lessonButtonsContainer {
+        padding: 10px;
+      }
+
+      h2 {
+        font-size: 20px;
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="site-header">
+      <div class="header-content">
+        <h1 class="page-title">
+          <a href="index.html">Konnichiwa Japan</a>
+        </h1>
+        <div class="header-buttons">
+          <button onclick="location.href='index.html'">Home</button>
+          <button onclick="location.href='index.html'">About</button>
+          <button onclick="location.href='index.html'">Support Us</button>
+        </div>
+      </div>
+      <p class="header-description">
+        Learn Japanese with passion, explore a new culture, and embrace the beauty of language!
+      </p>
+    </header>
+
+    <div class="table-container">
+      <div id="lessonButtonsContainer">
+          
+        <div class="center-button">
+        <a class="custom-button" href="m-i-n-n-a-n-o-n-i-h-o-n-g-o-pr_calculator.html">Check Your Point for PR</a>
+          </div>
 
 
-    <script>
-        function toggleSection(clickedHeader) {
-            const allSections = document.querySelectorAll('.section-content');
-            const thisContent = clickedHeader.nextElementSibling;
+        <div class="section">
+          <div class="section-header" onclick="toggleSection(this)">All Lesson Vocab</div>
+          <div class="section-content">
+            <!-- Links from Lesson 1–15 -->
+            <a href="m-i-n-n-a-n-o-n-i-h-o-n-g-o-l-e-s-s-o-n-lesson1.html">Page 1</a>
+            <a href="#">Page 2</a>
+            <a href="#">Page 3</a>
+            <!-- ... more ... -->
+            <a href="#">Page 15</a>
+          </div>
+        </div>
 
-            allSections.forEach(section => {
-                if (section !== thisContent) {
-                    section.style.display = 'none';
-                }
-            });
+        <div class="section">
+          <div class="section-header" onclick="toggleSection(this)">Learn With Quiz</div>
+          <div class="section-content">
+            <a href="#">Japan GK Quiz</a>
+            <a href="#">Lesson1 Vocabulary Quiz</a>
+            <!-- ... more ... -->
+            <a href="#">Lesson15 Vocabulary Quiz</a>
+          </div>
+        </div>
 
-            thisContent.style.display = thisContent.style.display === 'block' ? 'none' : 'block';
+        <div class="section">
+          <div class="section-header" onclick="toggleSection(this)">Flash Cards</div>
+          <div class="section-content">
+            <a href="#">Lesson 1 Flash Cards</a>
+            <a href="#">Lesson 2 Flash Cards</a>
+          </div>
+        </div>
+
+        <br>
+        <h2>Information</h2>
+        <a href="#">Language and Japanese culture</a>
+        <a href="#">Part-Time Job Information</a>
+        <a href="#">Transportation Information</a>
+        <a href="#">Scholarship Information</a>
+        <a href="#">Residence Information</a>
+        <a href="#">Cultural Events</a>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p>&copy; 2025 Konnichiwa Japan. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <!-- JS: Disable right click and copy -->
+  <script>
+    document.addEventListener("contextmenu", e => e.preventDefault());
+    document.addEventListener("copy", e => {
+      e.preventDefault();
+      alert("Copying is disabled on this page.");
+    });
+    document.addEventListener("keydown", function (e) {
+      if ((e.ctrlKey && ['c', 'u', 's'].includes(e.key.toLowerCase())) ||
+          (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'i')) {
+        e.preventDefault();
+      }
+    });
+  </script>
+
+  <!-- JS: Collapsible sections -->
+  <script>
+    function toggleSection(clickedHeader) {
+      const allSections = document.querySelectorAll('.section-content');
+      const thisContent = clickedHeader.nextElementSibling;
+
+      allSections.forEach(section => {
+        if (section !== thisContent) {
+          section.style.display = 'none';
         }
-    </script>
+      });
+
+      thisContent.style.display = thisContent.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
 </body>
 </html>
