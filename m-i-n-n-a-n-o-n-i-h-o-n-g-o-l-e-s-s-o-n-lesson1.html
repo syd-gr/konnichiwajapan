@@ -6,6 +6,13 @@
     <title>Lesson 1 Vocabulary</title>
     
     <style>
+    .container {
+    max-width: 1200px;  /* You can change this to 960px, 1140px, etc. */
+    margin: 0 auto;
+    padding: 0 15px;    /* Some side padding for mobile */
+}
+    
+    
     /* Fix logo overflow and layout stretching */
 * {
     box-sizing: border-box;
@@ -44,11 +51,15 @@ body {
     
     /* ===== Header Style ===== */
     .site-header {
-        background-color: #f8f9fa;
-        padding: 20px;
+        background-image: url('header-bg.jpg'); /* ✅ replace with your image path */
+        background-size: cover;
+        background-position: center;
+        padding: 40px 20px;
         text-align: center;
         border-bottom: 1px solid #ddd;
+        color: white;
     }
+
 
     .site-header .page-title a {
         text-decoration: none;
@@ -174,6 +185,7 @@ body {
 </head>
 <body>
     
+    <div class="container">
     <div class="wrapper">
         <!-- Header Section -->
         <header class="site-header">
@@ -215,6 +227,7 @@ body {
         <footer class="footer">
             <p>&copy; 2025 Konnichiwa Japan. All rights reserved.</p>
         </footer>
+    </div>
     </div>
 
     <!-- JS Script -->
