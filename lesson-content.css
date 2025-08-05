@@ -20,7 +20,7 @@ body {
 /* Logo watermark */
 .table-container::before {
     content: "";
-    background-image: url('your-logo.png'); /* Replace with actual logo filename */
+    background-image: url('favicon.png'); /* Replace with actual logo filename */
     background-size: 150px;
     background-repeat: no-repeat;
     background-position: center;
