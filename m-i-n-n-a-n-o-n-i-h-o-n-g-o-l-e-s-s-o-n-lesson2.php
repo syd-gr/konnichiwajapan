@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <?php include 'header.php'; ?>
+    <div class="wrapper">
+<?php include 'header.php'; ?>
     
     <div class="table-container">
         <table id="excelTable" class="excel-table">
@@ -39,6 +40,16 @@
                 e.preventDefault();
             }
         });
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         const vocabulary = [
             { kanji: "これ", hiragana: "これ", romaji: "kore", meaning: "This (thing here)" },
             { kanji: "それ", hiragana: "それ", romaji: "sore", meaning: "That (thing near you)" },
@@ -92,5 +103,6 @@
     </script>
     
     <?php include 'footer.php'; ?>
+    </div>
 </body>
 </html>

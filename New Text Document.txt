@@ -1,0 +1,3 @@
+Idea
+
+1. create salary eastimatorn after deducting all tax

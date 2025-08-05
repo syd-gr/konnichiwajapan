@@ -63,31 +63,108 @@
 
         <script>
             const questions = [
-                {
-                    question: "What is the capital of Japan?",
-                    correct: "Tokyo",
-                    options: ["Osaka", "Kyoto", "Hiroshima", "Tokyo"]
-                },
-                {
-                    question: "What is the currency of Japan?",
-                    correct: "Yen",
-                    options: ["Won", "Dollar", "Euro", "Yen"]
-                },
-                {
-                    question: "Which island is the largest in Japan?",
-                    correct: "Honshu",
-                    options: ["Hokkaido", "Kyushu", "Shikoku", "Honshu"]
-                },
-                {
-                    question: "What is the highest mountain in Japan?",
-                    correct: "Mount Fuji",
-                    options: ["Mount Takao", "Mount Hakone", "Mount Rokko", "Mount Fuji"]
-                },
-                {
-                    question: "What is Japan's traditional theater form?",
-                    correct: "Kabuki",
-                    options: ["Opera", "Ballet", "Drama", "Kabuki"]
-                }
+    
+    {
+        question: "What is the capital of Japan?",
+        correct: "Tokyo",
+        options: ["Osaka", "Kyoto", "Hiroshima", "Tokyo"]
+    },
+    {
+        question: "What is the currency of Japan?",
+        correct: "Yen",
+        options: ["Won", "Dollar", "Euro", "Yen"]
+    },
+    {
+        question: "Which island is the largest in Japan?",
+        correct: "Honshu",
+        options: ["Hokkaido", "Kyushu", "Shikoku", "Honshu"]
+    },
+    {
+        question: "What is the highest mountain in Japan?",
+        correct: "Mount Fuji",
+        options: ["Mount Takao", "Mount Hakone", "Mount Rokko", "Mount Fuji"]
+    },
+    {
+        question: "What is Japan's traditional theater form?",
+        correct: "Kabuki",
+        options: ["Opera", "Ballet", "Drama", "Kabuki"]
+    },
+    {
+        question: "Which sea lies to the west of Japan?",
+        correct: "Sea of Japan",
+        options: ["East China Sea", "Sea of Japan", "Yellow Sea", "Pacific Ocean"]
+    },
+    {
+        question: "What is the Japanese word for 'thank you'?",
+        correct: "Arigatou",
+        options: ["Konnichiwa", "Arigatou", "Sayonara", "Ohayou"]
+    },
+    {
+        question: "Which flower is considered a national symbol of Japan?",
+        correct: "Cherry Blossom",
+        options: ["Rose", "Lily", "Cherry Blossom", "Lotus"]
+    },
+    {
+        question: "What is the name of the bullet train in Japan?",
+        correct: "Shinkansen",
+        options: ["Metro", "Tokaido", "Shinkansen", "Narita Express"]
+    },
+    {
+        question: "What is sushi traditionally wrapped in?",
+        correct: "Seaweed",
+        options: ["Rice paper", "Bread", "Lettuce", "Seaweed"]
+    },
+    {
+        question: "Which martial art originated in Japan?",
+        correct: "Judo",
+        options: ["Taekwondo", "Karate", "Judo", "Kung Fu"]
+    },
+    {
+        question: "What is the Japanese emperor's palace called?",
+        correct: "Imperial Palace",
+        options: ["Royal Mansion", "Tokyo Castle", "Imperial Palace", "Nippon Castle"]
+    },
+    {
+        question: "Which city was the first to be hit by an atomic bomb?",
+        correct: "Hiroshima",
+        options: ["Nagasaki", "Hiroshima", "Osaka", "Tokyo"]
+    },
+    {
+        question: "What is a popular Japanese dish made with fermented soybeans?",
+        correct: "Natto",
+        options: ["Tofu", "Miso", "Natto", "Soba"]
+    },
+    {
+        question: "What does 'kanji' refer to?",
+        correct: "Chinese characters used in Japanese",
+        options: ["Japanese alphabets", "Traditional poems", "Chinese characters used in Japanese", "Shrine names"]
+    },
+    {
+        question: "Which Japanese company makes PlayStation?",
+        correct: "Sony",
+        options: ["Nintendo", "Panasonic", "Sony", "SEGA"]
+    },
+    {
+        question: "Which is the northernmost main island of Japan?",
+        correct: "Hokkaido",
+        options: ["Honshu", "Kyushu", "Hokkaido", "Shikoku"]
+    },
+    {
+        question: "What is the term for Japanese comics?",
+        correct: "Manga",
+        options: ["Anime", "Manga", "Cartoon", "Drama"]
+    },
+    {
+        question: "What does the red circle on Japan's flag represent?",
+        correct: "The sun",
+        options: ["A cherry", "The emperor", "Mount Fuji", "The sun"]
+    },
+    {
+        question: "Which religion is widely practiced in Japan along with Buddhism?",
+        correct: "Shinto",
+        options: ["Hinduism", "Christianity", "Islam", "Shinto"]
+    }
+
             ];
 
             let currentQuestionIndex = 0;

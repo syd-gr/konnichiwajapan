@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Japan PR Points Calculator</title>
+   <link rel="stylesheet" href="styles.css">
+  
+  <style>
+    body.pr-calculator-page {
+  font-family: 'Segoe UI', sans-serif;
+  padding: 10px;
+  max-width: 600px;
+  margin: auto;
+  line-height: 1.5;
+  background: #f8f9fa;
+}
+
+body.pr-calculator-page h1,
+body.pr-calculator-page h2 {
+  text-align: center;
+  color: #343a40;
+}
+
+body.pr-calculator-page label {
+  display: block;
+  margin: 12px 0 4px;
+  font-weight: bold;
+  color: #495057;
+}
+
+body.pr-calculator-page select,
+body.pr-calculator-page input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.pr-calculator-page select:focus,
+body.pr-calculator-page input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0,123,255,0.25);
+  outline: none;
+}
+
+body.pr-calculator-page form#calcForm button {
+  padding: 14px;
+  font-size: 1.1em;
+  font-weight: bold;
+  width: 100%;
+  margin-top: 20px;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+body.pr-calculator-page form#calcForm button:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+  background: linear-gradient(135deg, #0056b3, #003d80);
+}
+
+body.pr-calculator-page .result {
+  margin-top: 20px;
+  padding: 15px;
+  background: #e9ecef;
+  border-left: 4px solid #007bff;
+  border-radius: 6px;
+}
+
+body.pr-calculator-page .important-note {
+  background: #fff3cd;
+  color: #856404;
+  padding: 15px;
+  margin-top: 30px;
+  border-left: 4px solid #ffeeba;
+  border-radius: 6px;
+}
+
+body.pr-calculator-page ul {
+  padding-left: 20px;
+}
+
+@media (max-width: 600px) {
+  body.pr-calculator-page {
+    padding: 15px;
+  }
+}
+
+  </style>
+</head>
+<body class="pr-calculator-page">
+  <div class="wrapper">
+        <?php include 'header.php'; ?>
+  
+  <h1>Japan PR Points Calculator</h1>
+
+  <form id="calcForm">
+    <label>Education Level</label>
+    <select name="education">
+      <option value="30">Doctorate (Japan or top global university)</option>
+      <option value="25">Master’s degree</option>
+      <option value="20">Bachelor’s degree</option>
+      <option value="0">Other</option>
+    </select>
+
+    <label>Graduated from a Japanese University?</label>
+    <select name="japanEdu">
+      <option value="10">Yes (+10 points)</option>
+      <option value="0">No</option>
+    </select>
+
+    <label>Age</label>
+    <select name="age">
+      <option value="15">Under 30</option>
+      <option value="10">30–34</option>
+      <option value="5">35–39</option>
+      <option value="0">40 or older</option>
+    </select>
+
+    <label>Years of Professional Experience</label>
+    <select name="experience">
+      <option value="20">Over 10 years</option>
+      <option value="15">7–9 years</option>
+      <option value="10">4–6 years</option>
+      <option value="5">1–3 years</option>
+      <option value="0">Less than 1 year</option>
+    </select>
+
+    <label>Annual Income (JPY)</label>
+    <select name="income">
+      <option value="40">Over ¥10M</option>
+      <option value="30">¥7–10M</option>
+      <option value="20">¥5–7M</option>
+      <option value="10">¥4–5M</option>
+      <option value="0">Under ¥4M</option>
+    </select>
+
+    <label>Japanese Language Level</label>
+    <select name="language">
+      <option value="15">JLPT N1 / Major in Japanese</option>
+      <option value="10">JLPT N2</option>
+      <option value="0">No certification</option>
+    </select>
+
+    <button type="submit">Calculate Points</button>
+  </form>
+
+  <div id="result" class="result" style="display:none;">
+    <p><strong>Total Points:</strong> <span id="totalPoints"></span></p>
+    <p id="eligibility"></p>
+  </div>
+
+  <div class="important-note">
+    <h2>🔍 Bonus Point Opportunities</h2>
+    <ul>
+      <li>✅ Work for a company receiving government innovation subsidies.</li>
+      <li>✅ Employed by SME with R&D expenses over 3% of revenue.</li>
+      <li>✅ Holder of a foreign qualification related to your field.</li>
+      <li>✅ Work on a recognized project in a growth industry.</li>
+      <li>✅ Graduate from a designated foreign university.</li>
+      <li>✅ Completion of MOJ-approved training programs.</li>
+      <li>✅ Research achievements or work for certified promotion organizations.</li>
+    </ul>
+    <br>
+    <p>📌 Meeting any of the above may allow you to claim additional <strong>10–15 points</strong>.</p>
+    <br>
+    <p><em>Note: Official confirmation may be required when applying. 
+      <br>Refer to the Ministry of Justice guidelines for updated criteria.</em></p>
+  </div>
+
+  <script>
+    document.getElementById('calcForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const f = e.target;
+      let total = ['education','japanEdu','age','experience','income','language']
+        .reduce((sum, name) => sum + parseInt(f[name].value), 0);
+
+      document.getElementById('totalPoints').textContent = total;
+
+      let msg = '';
+      if (total >= 80) {
+        msg = '✅ With 80+ points: Eligible for PR after 1 year.';
+      } else if (total >= 70) {
+        msg = '✅ 70–79 points: Eligible for PR after 3 years.';
+      } else {
+        msg = '❌ Below 70 points: Not eligible for fast-track PR.';
+      }
+
+      document.getElementById('eligibility').innerHTML = msg;
+      document.getElementById('result').style.display = 'block';
+    });
+  </script>
+    
+    <?php include 'footer.php'; ?>
+    </div>
+
+</body>
+</html>

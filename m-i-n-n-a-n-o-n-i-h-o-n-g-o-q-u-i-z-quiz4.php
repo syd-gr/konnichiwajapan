@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vocabulary Quiz</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 20px;
+    }
+    .quiz-container {
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+    }
+    .question {
+      font-size: 1.4em;
+      margin-bottom: 10px;
+    }
+    .options {
+      margin-top: 15px;
+      text-align: left;
+    }
+    .options input {
+      margin-right: 10px;
+    }
+    .next-btn, .result-btn, #restart-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    .correct {
+      color: green;
+      font-weight: bold;
+    }
+    .incorrect {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+        <?php include 'header.php'; ?>
+  
+  <div class="quiz-container">
+    <div id="question-container">
+      <div class="question" id="question"></div>
+      <div class="options" id="options"></div>
+      <button class="next-btn" id="action-btn">Show Answer</button>
+      <button class="result-btn" id="result-btn" style="display: none;">Show Result</button>
+    </div>
+
+    <div id="result-container" style="display: none;">
+      <h2>Your Score: <span id="score"></span>/<span id="total"></span></h2>
+      <button id="restart-btn">Restart Quiz</button>
+    </div>
+  </div>
+
+  <script>
+    const vocab = [
+      { kanji: "時間", hiragana: "じかん", romaji: "jikan", meaning: "Time" },
+            { kanji: "日", hiragana: "ひ", romaji: "hi", meaning: "Day" },
+            { kanji: "月", hiragana: "つき", romaji: "tsuki", meaning: "Month" },
+            { kanji: "年", hiragana: "ねん", romaji: "nen", meaning: "Year" },
+            { kanji: "分", hiragana: "ふん", romaji: "fun", meaning: "Minute" },
+            { kanji: "今", hiragana: "いま", romaji: "ima", meaning: "Now" },
+            { kanji: "午前", hiragana: "ごぜん", romaji: "gozen", meaning: "AM" },
+            { kanji: "午後", hiragana: "ごご", romaji: "gogo", meaning: "PM" },
+            { kanji: "時々", hiragana: "ときどき", romaji: "tokidoki", meaning: "Sometimes" },
+            { kanji: "明日", hiragana: "あした", romaji: "ashita", meaning: "Tomorrow" },
+            { kanji: "昨日", hiragana: "きのう", romaji: "kinou", meaning: "Yesterday" },
+            { kanji: "毎日", hiragana: "まいにち", romaji: "mainichi", meaning: "Every day" },
+            { kanji: "毎週", hiragana: "まいしゅう", romaji: "maishuu", meaning: "Every week" },
+            { kanji: "毎月", hiragana: "まいつき", romaji: "maitsuki", meaning: "Every month" },
+            { kanji: "毎年", hiragana: "まいねん", romaji: "mainen", meaning: "Every year" },
+            { kanji: "後", hiragana: "あと", romaji: "ato", meaning: "After" },
+            { kanji: "前", hiragana: "まえ", romaji: "mae", meaning: "Before" },
+            { kanji: "昼", hiragana: "ひる", romaji: "hiru", meaning: "Noon" },
+            { kanji: "夜", hiragana: "よる", romaji: "yoru", meaning: "Night" },
+            { kanji: "今週", hiragana: "こんしゅう", romaji: "konshuu", meaning: "This week" },
+            { kanji: "来週", hiragana: "らいしゅう", romaji: "raishuu", meaning: "Next week" },
+            { kanji: "先週", hiragana: "せんしゅう", romaji: "senshuu", meaning: "Last week" },
+            { kanji: "今月", hiragana: "こんげつ", romaji: "kongetsu", meaning: "This month" },
+            { kanji: "来月", hiragana: "らいげつ", romaji: "raigetsu", meaning: "Next month" },
+            { kanji: "先月", hiragana: "せんげつ", romaji: "sengetsu", meaning: "Last month" },
+            { kanji: "時", hiragana: "とき", romaji: "toki", meaning: "Time, when" },
+            { kanji: "今晩", hiragana: "こんばん", romaji: "konban", meaning: "This evening" },
+            { kanji: "朝", hiragana: "あさ", romaji: "asa", meaning: "Morning" },
+            { kanji: "昼食", hiragana: "ちゅうしょく", romaji: "chuushoku", meaning: "Lunch" },
+            { kanji: "晩ご飯", hiragana: "ばんごはん", romaji: "bangohan", meaning: "Dinner" }
+    ];
+
+    // Shuffle function
+    function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+    }
+
+    // Generate quiz questions
+    const questions = vocab.map((item) => {
+      const correct = item.meaning;
+      const wrongOptions = vocab
+        .filter((v) => v.meaning !== correct)
+        .sort(() => 0.5 - Math.random())
+        .slice(0, 3)
+        .map((v) => v.meaning);
+      const options = [correct, ...wrongOptions];
+      shuffle(options);
+
+      return {
+        question: `${item.kanji}（${item.hiragana}）`,
+        correct,
+        options
+      };
+    });
+
+    let currentQuestionIndex = 0;
+    let score = 0;
+    let state = "show";
+
+    const questionElement = document.getElementById("question");
+    const optionsElement = document.getElementById("options");
+    const actionButton = document.getElementById("action-btn");
+    const resultButton = document.getElementById("result-btn");
+    const resultContainer = document.getElementById("result-container");
+    const scoreElement = document.getElementById("score");
+    const totalElement = document.getElementById("total");
+
+    function loadQuestion() {
+      state = "show";
+      actionButton.textContent = "Show Answer";
+
+      const currentQuestion = questions[currentQuestionIndex];
+      questionElement.textContent = `Q${currentQuestionIndex + 1}: ${currentQuestion.question}`;
+      optionsElement.innerHTML = "";
+
+      currentQuestion.options.forEach(option => {
+        const div = document.createElement("div");
+        div.innerHTML = `
+          <label>
+            <input type="radio" name="option" value="${option}"> ${option}
+          </label>
+        `;
+        optionsElement.appendChild(div);
+      });
+    }
+
+    function highlightAnswer() {
+      const currentQuestion = questions[currentQuestionIndex];
+      const options = document.querySelectorAll("input[name='option']");
+
+      options.forEach(input => {
+        const label = input.parentElement;
+        input.disabled = true;
+        if (input.value === currentQuestion.correct) {
+          label.classList.add("correct");
+        }
+        if (input.checked && input.value !== currentQuestion.correct) {
+          label.classList.add("incorrect");
+        }
+      });
+    }
+
+    actionButton.addEventListener("click", () => {
+      const selectedOption = document.querySelector("input[name='option']:checked");
+
+      if (state === "show") {
+        if (!selectedOption) {
+          alert("Please select an option!");
+          return;
+        }
+
+        const answer = selectedOption.value;
+        if (answer === questions[currentQuestionIndex].correct) {
+          score++;
+        }
+
+        highlightAnswer();
+        state = "next";
+        actionButton.textContent = "Next Question";
+      } else {
+        currentQuestionIndex++;
+        if (currentQuestionIndex < questions.length) {
+          loadQuestion();
+        } else {
+          document.getElementById("question-container").style.display = "none";
+          resultContainer.style.display = "block";
+          scoreElement.textContent = score;
+          totalElement.textContent = questions.length;
+          actionButton.style.display = "none";
+        }
+      }
+    });
+
+    document.getElementById("restart-btn").addEventListener("click", () => {
+      currentQuestionIndex = 0;
+      score = 0;
+      state = "show";
+
+      shuffle(questions); // Optional: reshuffle question order on restart
+      resultContainer.style.display = "none";
+      document.getElementById("question-container").style.display = "block";
+      actionButton.style.display = "inline-block";
+      actionButton.textContent = "Show Answer";
+      resultButton.style.display = "none";
+
+      loadQuestion();
+    });
+
+    // Start quiz
+    shuffle(questions);
+    loadQuestion();
+  </script>
+  
+  <?php include 'footer.php'; ?>
+    </div>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 1 Vocabulary</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="wrapper">
+<?php include 'header.php'; ?>
+    
+    <div class="table-container">
+    <table id="excelTable" class="excel-table">
+        <thead>
+            <tr>
+                <th colspan="5" style="text-align:center; font-size:18px;">JLPT N5 Lesson 9 All Vocabulary</th>
+            </tr>
+            <tr>
+                <th>S.N</th>
+                <th>KANJI</th>
+                <th>HIRAGANA</th>
+                <th>ROMANIZE</th>
+                <th>MEANING</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+    <script>
+        // Disable right-click and some DevTools shortcuts
+        document.addEventListener("contextmenu", e => e.preventDefault());
+        document.addEventListener("keydown", function (e) {
+            if (
+                e.key === "F12" ||
+                (e.ctrlKey && e.shiftKey && ["I", "J", "C"].includes(e.key)) ||
+                (e.ctrlKey && e.key === "U")
+            ) {
+                e.preventDefault();
+            }
+        });
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        const vocabulary = [
+        { kanji: "出る", hiragana: "でる", romaji: "deru", meaning: "To go out" },
+            { kanji: "入る", hiragana: "はいる", romaji: "hairu", meaning: "To enter" },
+            { kanji: "終わる", hiragana: "おわる", romaji: "owaru", meaning: "To end" },
+            { kanji: "始める", hiragana: "はじめる", romaji: "hajimeru", meaning: "To begin" },
+            { kanji: "教える", hiragana: "おしえる", romaji: "oshieru", meaning: "To teach" },
+            { kanji: "習う", hiragana: "ならう", romaji: "narau", meaning: "To learn" },
+            { kanji: "借りる", hiragana: "かりる", romaji: "kariru", meaning: "To borrow" },
+            { kanji: "貸す", hiragana: "かす", romaji: "kasu", meaning: "To lend" },
+            { kanji: "買う", hiragana: "かう", romaji: "kau", meaning: "To buy" },
+            { kanji: "売る", hiragana: "うる", romaji: "uru", meaning: "To sell" },
+            { kanji: "分ける", hiragana: "わける", romaji: "wakeru", meaning: "To divide" },
+            { kanji: "作る", hiragana: "つくる", romaji: "tsukuru", meaning: "To make" },
+            { kanji: "洗う", hiragana: "あらう", romaji: "arau", meaning: "To wash" },
+            { kanji: "泳ぐ", hiragana: "およぐ", romaji: "oyogu", meaning: "To swim" },
+            { kanji: "歩く", hiragana: "あるく", romaji: "aruku", meaning: "To walk" },
+            { kanji: "読む", hiragana: "よむ", romaji: "yomu", meaning: "To read" },
+            { kanji: "書く", hiragana: "かく", romaji: "kaku", meaning: "To write" },
+            { kanji: "聞く", hiragana: "きく", romaji: "kiku", meaning: "To ask" },
+            { kanji: "食べる", hiragana: "たべる", romaji: "taberu", meaning: "To eat" },
+            { kanji: "飲む", hiragana: "のむ", romaji: "nomu", meaning: "To drink" },
+            { kanji: "買い物", hiragana: "かいもの", romaji: "kaimono", meaning: "Shopping" },
+            { kanji: "仕事", hiragana: "しごと", romaji: "shigoto", meaning: "Work" },
+            { kanji: "勉強", hiragana: "べんきょう", romaji: "benkyou", meaning: "Study" },
+            { kanji: "運転", hiragana: "うんてん", romaji: "unten", meaning: "Driving" },
+            { kanji: "電話", hiragana: "でんわ", romaji: "denwa", meaning: "Phone" },
+            { kanji: "テレビ", hiragana: "てれび", romaji: "terebi", meaning: "Television" },
+            { kanji: "新聞", hiragana: "しんぶん", romaji: "shinbun", meaning: "Newspaper" },
+            { kanji: "雑誌", hiragana: "ざっし", romaji: "zasshi", meaning: "Magazine" },
+            { kanji: "写真", hiragana: "しゃしん", romaji: "shashin", meaning: "Photograph" }
+        ];
+
+        function populateTable() {
+            const tableBody = document.querySelector("#excelTable tbody");
+            tableBody.innerHTML = "";
+            vocabulary.forEach((word, index) => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${index + 1}</td>
+                    <td>${word.kanji}</td>
+                    <td>${word.hiragana}</td>
+                    <td>${word.romaji}</td>
+                    <td>${word.meaning}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", populateTable);
+    </script>
+    
+    <?php include 'footer.php'; ?>
+    </div>
+</body>
+</html>

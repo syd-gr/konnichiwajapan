@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 1 Vocabulary</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="wrapper">
+<?php include 'header.php'; ?>
+    
+    <div class="table-container">
+    <table id="excelTable" class="excel-table">
+        <thead>
+            <tr>
+                <th colspan="5" style="text-align:center; font-size:18px;">JLPT N5 Lesson 4 All Vocabulary</th>
+            </tr>
+            <tr>
+                <th>S.N</th>
+                <th>KANJI</th>
+                <th>HIRAGANA</th>
+                <th>ROMANIZE</th>
+                <th>MEANING</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+    <script>
+        // Disable right-click and some DevTools shortcuts
+        document.addEventListener("contextmenu", e => e.preventDefault());
+        document.addEventListener("keydown", function (e) {
+            if (
+                e.key === "F12" ||
+                (e.ctrlKey && e.shiftKey && ["I", "J", "C"].includes(e.key)) ||
+                (e.ctrlKey && e.key === "U")
+            ) {
+                e.preventDefault();
+            }
+        });
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        const vocabulary = [
+        { kanji: "時間", hiragana: "じかん", romaji: "jikan", meaning: "Time" },
+            { kanji: "日", hiragana: "ひ", romaji: "hi", meaning: "Day" },
+            { kanji: "月", hiragana: "つき", romaji: "tsuki", meaning: "Month" },
+            { kanji: "年", hiragana: "ねん", romaji: "nen", meaning: "Year" },
+            { kanji: "分", hiragana: "ふん", romaji: "fun", meaning: "Minute" },
+            { kanji: "今", hiragana: "いま", romaji: "ima", meaning: "Now" },
+            { kanji: "午前", hiragana: "ごぜん", romaji: "gozen", meaning: "AM" },
+            { kanji: "午後", hiragana: "ごご", romaji: "gogo", meaning: "PM" },
+            { kanji: "時々", hiragana: "ときどき", romaji: "tokidoki", meaning: "Sometimes" },
+            { kanji: "明日", hiragana: "あした", romaji: "ashita", meaning: "Tomorrow" },
+            { kanji: "昨日", hiragana: "きのう", romaji: "kinou", meaning: "Yesterday" },
+            { kanji: "毎日", hiragana: "まいにち", romaji: "mainichi", meaning: "Every day" },
+            { kanji: "毎週", hiragana: "まいしゅう", romaji: "maishuu", meaning: "Every week" },
+            { kanji: "毎月", hiragana: "まいつき", romaji: "maitsuki", meaning: "Every month" },
+            { kanji: "毎年", hiragana: "まいねん", romaji: "mainen", meaning: "Every year" },
+            { kanji: "後", hiragana: "あと", romaji: "ato", meaning: "After" },
+            { kanji: "前", hiragana: "まえ", romaji: "mae", meaning: "Before" },
+            { kanji: "昼", hiragana: "ひる", romaji: "hiru", meaning: "Noon" },
+            { kanji: "夜", hiragana: "よる", romaji: "yoru", meaning: "Night" },
+            { kanji: "今週", hiragana: "こんしゅう", romaji: "konshuu", meaning: "This week" },
+            { kanji: "来週", hiragana: "らいしゅう", romaji: "raishuu", meaning: "Next week" },
+            { kanji: "先週", hiragana: "せんしゅう", romaji: "senshuu", meaning: "Last week" },
+            { kanji: "今月", hiragana: "こんげつ", romaji: "kongetsu", meaning: "This month" },
+            { kanji: "来月", hiragana: "らいげつ", romaji: "raigetsu", meaning: "Next month" },
+            { kanji: "先月", hiragana: "せんげつ", romaji: "sengetsu", meaning: "Last month" },
+            { kanji: "時", hiragana: "とき", romaji: "toki", meaning: "Time, when" },
+            { kanji: "今晩", hiragana: "こんばん", romaji: "konban", meaning: "This evening" },
+            { kanji: "朝", hiragana: "あさ", romaji: "asa", meaning: "Morning" },
+            { kanji: "昼食", hiragana: "ちゅうしょく", romaji: "chuushoku", meaning: "Lunch" },
+            { kanji: "晩ご飯", hiragana: "ばんごはん", romaji: "bangohan", meaning: "Dinner" }
+        ];
+
+        function populateTable() {
+            const tableBody = document.querySelector("#excelTable tbody");
+            tableBody.innerHTML = "";
+            vocabulary.forEach((word, index) => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${index + 1}</td>
+                    <td>${word.kanji}</td>
+                    <td>${word.hiragana}</td>
+                    <td>${word.romaji}</td>
+                    <td>${word.meaning}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", populateTable);
+    </script>
+    
+    <?php include 'footer.php'; ?>
+    </div>
+</body>
+</html>

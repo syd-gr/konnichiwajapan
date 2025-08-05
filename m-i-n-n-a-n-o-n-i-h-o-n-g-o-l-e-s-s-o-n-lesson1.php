@@ -8,7 +8,8 @@
 </head>
 <body>
     
-    <?php include 'header.php'; ?>
+    <div class="wrapper">
+<?php include 'header.php'; ?>
     
     <div class="table-container">
     <table id="excelTable" class="excel-table">
@@ -109,5 +110,6 @@
     </script>
     
     <?php include 'footer.php'; ?>
+    </div>
 </body>
 </html>
