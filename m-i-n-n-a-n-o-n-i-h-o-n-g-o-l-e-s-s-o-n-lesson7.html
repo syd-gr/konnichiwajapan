@@ -9,7 +9,19 @@
 <body>
     
     <div class="wrapper">
-<?php include 'header.php'; ?>
+        <header class="site-header">
+        <div class="header-content">
+            <h1 class="page-title">
+                <a href="index.php">Konnichiwa Japan</a>
+            </h1>
+        <div class="header-buttons">
+            <button onclick="location.href='index.php'">Home</button>
+            <button onclick="location.href='about.php'">About</button>
+            <button onclick="location.href='support.php'">Support Us</button>
+        </div>
+        </div>
+        <p class="header-description">Learn Japanese with passion, explore a new culture, and embrace the beauty of language!</p>
+        </header>
     
     <div class="table-container">
     <table id="excelTable" class="excel-table">
@@ -109,7 +121,8 @@
         document.addEventListener("DOMContentLoaded", populateTable);
     </script>
     
-    <?php include 'footer.php'; ?>
-    </div>
+<footer class="footer">
+        <p>&copy; 2025 Konnichiwa Japan. All rights reserved.</p>
+        </footer>    </div>
 </body>
 </html>
