@@ -1,0 +1,39 @@
+/* lesson-content.css */
+
+.wrapper {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+.excel-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.excel-table th, .excel-table td {
+    border: 1px solid #ddd;
+    padding: 10px 12px;
+    text-align: center;
+}
+
+.excel-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    color: #333;
+}
+
+@media (max-width: 600px) {
+    .excel-table th, .excel-table td {
+        font-size: 14px;
+        padding: 8px;
+    }
+}

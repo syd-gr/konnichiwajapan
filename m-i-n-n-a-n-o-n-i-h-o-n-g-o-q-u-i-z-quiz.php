@@ -45,7 +45,19 @@
 </head>
 <body>
     <div class="wrapper">
-        <?php include 'header.php'; ?>
+        <header class="site-header">
+        <div class="header-content">
+            <h1 class="page-title">
+                <a href="index.php">Konnichiwa Japan</a>
+            </h1>
+        <div class="header-buttons">
+            <button onclick="location.href='index.html'">Home</button>
+            <button onclick="location.href='about.html'">About</button>
+            <button onclick="location.href='support.html'">Support Us</button>
+        </div>
+        </div>
+        <p class="header-description">Learn Japanese with passion, explore a new culture, and embrace the beauty of language!</p>
+        </header>
 
         <div class="quiz-container" id="quiz-container">
             <div id="question-container">
