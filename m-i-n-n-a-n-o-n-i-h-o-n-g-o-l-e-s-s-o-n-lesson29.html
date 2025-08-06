@@ -76,8 +76,60 @@
         });
 
         const vocabulary = [
+  { "kanji": "開きます", "hiragana": "あきます", "romaji": "akimasu", "meaning": "open (door)" },
+  { "kanji": "閉まります", "hiragana": "しまります", "romaji": "shimarimasu", "meaning": "close (the door)" },
+  { "kanji": "", "hiragana": "つきます", "romaji": "tsukimasu", "meaning": "turn on, light up (lamp)" },
+  { "kanji": "消えます", "hiragana": "きえます", "romaji": "kiemasu", "meaning": "turn off (the light)" },
+  { "kanji": "込みます", "hiragana": "こみます", "romaji": "komimasu", "meaning": "east (sugar)" },
+  { "kanji": "", "hiragana": "すきます", "romaji": "sukimasu", "meaning": "absent (road)" },
+  { "kanji": "壊れます", "hiragana": "こわれます", "romaji": "kowaremasu", "meaning": "broken (chair)" },
+  { "kanji": "割れます", "hiragana": "われます", "romaji": "waremasu", "meaning": "can hear" },
+  { "kanji": "折れます", "hiragana": "おれます", "romaji": "oremasu", "meaning": "broken (tree)" },
+  { "kanji": "開きます", "hiragana": "やぶれます", "romaji": "yaburemasu", "meaning": "torn (paper)" },
+  { "kanji": "汚れます", "hiragana": "よごれます", "romaji": "yogoremasu", "meaning": "dirty" },
+  { "kanji": "付きます", "hiragana": "つきます", "romaji": "tsukimasu", "meaning": "sticky, sticky (with bag)" },
+  { "kanji": "外れます", "hiragana": "はずれます", "romaji": "hazuremasu", "meaning": "slip, flare, fall off (shoot)" },
+  { "kanji": "止まります", "hiragana": "とまります", "romaji": "tomarimasu", "meaning": "stop" },
+  { "kanji": "", "hiragana": "まちがえます", "romaji": "machigaemasu", "meaning": "confused, wrong" },
+  { "kanji": "落とします", "hiragana": "おとします", "romaji": "otoshimasu", "meaning": "dropped, dropped" },
+  { "kanji": "掛かります", "hiragana": "かかります", "romaji": "kakarimasu", "meaning": "lock up" },
+  { "kanji": "", "hiragana": "ふきます", "romaji": "fukimasu", "meaning": "mop (door)" },
+  { "kanji": "", "hiragana": "とりかえます", "romaji": "torikaemasu", "meaning": "replace batteries)" },
+  { "kanji": "片付けます", "hiragana": "かたづけます", "romaji": "katazukemasu", "meaning": "clean up" },
+  { "kanji": "皿", "hiragana": "さら　（おさら）", "romaji": "sara (osara)", "meaning": "plate" },
+  { "kanji": "茶碗", "hiragana": "ちゃわん　（おちゃわん）", "romaji": "chawan (ochawan)", "meaning": "bowl" },
+  { "kanji": "", "hiragana": "コップ", "romaji": "koppu", "meaning": "the cup" },
+  { "kanji": "", "hiragana": "ガラス", "romaji": "garasu", "meaning": "glass" },
+  { "kanji": "袋", "hiragana": "ふくろ", "romaji": "fukuro", "meaning": "handbag" },
+  { "kanji": "書類", "hiragana": "しょるい", "romaji": "shorui", "meaning": "papers" },
+  { "kanji": "枝", "hiragana": "えだ", "romaji": "eda", "meaning": "bough" },
+  { "kanji": "駅員", "hiragana": "えきいん", "romaji": "ekiin", "meaning": "station staff" },
+  { "kanji": "交番", "hiragana": "こうばん", "romaji": "kōban", "meaning": "Police stations, police boots" },
+  { "kanji": "", "hiragana": "スピーチ", "romaji": "supīchi", "meaning": "speech" },
+  { "kanji": "返事", "hiragana": "へんじ", "romaji": "henji", "meaning": "reply" },
+  { "kanji": "お先にどうぞ", "hiragana": "おさきにどうぞ", "romaji": "osaki ni dōzo", "meaning": "Please come back first" },
+  { "kanji": "源氏物語", "hiragana": "げんじものがたり", "romaji": "genji monogatari", "meaning": "novels were written in the heian period" },
+  { "kanji": "今の電車", "hiragana": "いまのでんしゃ", "romaji": "ima no densha", "meaning": "The train has just run" },
+  { "kanji": "忘れ物", "hiragana": "わすれもの", "romaji": "wasuremono", "meaning": "Forget it" },
+  { "kanji": "", "hiragana": "このくらい", "romaji": "kono kurai", "meaning": "this size, about this size" },
+  { "kanji": "側", "hiragana": "がわ", "romaji": "gawa", "meaning": "towards …" },
+  { "kanji": "", "hiragana": "ポケット", "romaji": "poketto", "meaning": "handbag" },
+  { "kanji": "辺", "hiragana": "へん", "romaji": "hen", "meaning": "place, region …" },
+  { "kanji": "覚えていません", "hiragana": "おぼえていません", "romaji": "oboete imasen", "meaning": "I do not remember" },
+  { "kanji": "網棚", "hiragana": "あみだな", "romaji": "amidana", "meaning": "luggage rack" },
+  { "kanji": "確か", "hiragana": "たしか", "romaji": "tashika", "meaning": "perhaps" },
+  { "kanji": "", "hiragana": "ああ、よかった", "romaji": "ā, yokatta", "meaning": "Oh, lucky" },
+  { "kanji": "地震", "hiragana": "じしん", "romaji": "jishin", "meaning": "earthquake" },
+  { "kanji": "壁", "hiragana": "かべ", "romaji": "kabe", "meaning": "the wall" },
+  { "kanji": "針", "hiragana": "はり", "romaji": "hari", "meaning": "clockwise" },
+  { "kanji": "付けます", "hiragana": "さします", "romaji": "sashimasu", "meaning": "just" },
+  { "kanji": "駅前", "hiragana": "えきまえ", "romaji": "ekimae", "meaning": "in front of the station" },
+  { "kanji": "倒れます", "hiragana": "たおれます", "romaji": "taoremasu", "meaning": "to pour" },
+  { "kanji": "西の方", "hiragana": "にしのほう", "romaji": "nishi no hō", "meaning": "West" },
+  { "kanji": "燃えます", "hiragana": "もえます", "romaji": "moemasu", "meaning": "Fire" }
+]
   
-];
+;
 
         function populateTable() {
             const tableBody = document.querySelector("#excelTable tbody");
