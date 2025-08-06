@@ -4,12 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Blog Page</title>
-  <link rel="stylesheet" href="blog.css" />
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="blog.css">
+  <link rel="stylesheet" href="index.css">
 </head>
 <body>
   <div class="wrapper">
-  <?php include 'header.php'; ?>
+  <header class="site-header">
+      <div class="header-content">
+        <h1 class="page-title">
+          <a href="index.html">Konnichiwa Japan</a>
+        </h1>
+        <div class="header-buttons">
+          <button onclick="location.href='index.html'">Home</button>
+          <button onclick="location.href='index.html'">About</button>
+          <button onclick="location.href='index.html'">Support Us</button>
+        </div>
+      </div>
+      <p class="header-description">
+        Learn Japanese with passion, explore a new culture, and embrace the beauty of language!
+      </p>
+    </header>
 
   <main class="blog-container">
     <article class="blog-post">
@@ -64,7 +78,9 @@
     </article>
   </main>
 
-  <?php include 'footer.php'; ?>
+  <footer class="footer">
+      <p>&copy; 2025 Konnichiwa Japan. All rights reserved.</p>
+    </footer>
     </div>
   
   <script>
