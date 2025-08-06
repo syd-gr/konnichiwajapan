@@ -202,11 +202,14 @@
 
     /* === FOOTER === */
     .footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #333;
-      color: #fff;
-      font-size: 14px;
+        background-color: #6598d6;
+        padding: 15px;
+        text-align: center;
+        font-size: 14px;
+        color: #000000;
+        margin-top: 40px;
+        border-top: 1px solid #ddd;
+        font-weight: bold;
     }
 
     /* === MOBILE STYLES === */
