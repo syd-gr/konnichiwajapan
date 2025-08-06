@@ -212,6 +212,10 @@
         font-weight: bold;
     }
 
+  .wrapper {
+    flex: 1;
+    }
+
     /* === MOBILE STYLES === */
     @media (max-width: 600px) {
       .page-title a {
