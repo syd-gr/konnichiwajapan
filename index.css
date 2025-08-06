@@ -55,6 +55,10 @@
       background-color: #f9f9f9;
       overflow-x: hidden;
       user-select: none;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
     }
 
     a {
@@ -64,6 +68,7 @@
     .wrapper {
       max-width: 100%;
       overflow-x: hidden;
+      flex: 1;
     }
 
     /* === HEADER === */
@@ -210,10 +215,6 @@
         margin-top: 40px;
         border-top: 1px solid #ddd;
         font-weight: bold;
-    }
-
-  .wrapper {
-    flex: 1;
     }
 
     /* === MOBILE STYLES === */
