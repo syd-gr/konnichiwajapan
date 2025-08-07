@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About us</title>
+  <link rel="stylesheet" href="blog.css">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class="wrapper">
+  <header class="site-header">
+      <div class="header-content">
+        <h1 class="page-title">
+          <a href="index.html">Konnichiwa Japan</a>
+        </h1>
+        <div class="header-buttons">
+          <button onclick="location.href='index.html'">Home</button>
+          <button onclick="location.href='index.html'">About</button>
+          <button onclick="location.href='index.html'">Support Us</button>
+        </div>
+      </div>
+      <p class="header-description">
+        Learn Japanese with passion, explore a new culture, and embrace the beauty of language!
+      </p>
+    </header>
+
+  <main class="blog-container">
+    <article class="blog-post">
+      <h2 class="blog-title">Embracing Language and Japanese Culture</h2>
+      <p class="blog-meta">Posted on August 4, 2025 by <strong>Author</strong></p>
+
+      <div class="blog-content">
+        <h3>The Power of Language</h3>
+         <p>Japanese is the official language of Japan, and while many universities offer courses in English, 
+           learning the local language can significantly enrich your experience. By speaking Japanese, 
+          you can engage in more meaningful interactions with locals, participate in traditional activities, and access a broader range of opportunities.</p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+      <p>&copy; 2025 Konnichiwa Japan. All rights reserved.</p>
+    </footer>
+    </div>
+  
+  <script>
+  // Disable right-click
+  document.addEventListener("contextmenu", function (e) {
+    e.preventDefault();
+  });
+
+  // Disable copy (Ctrl+C, right-click > copy, etc.)
+  document.addEventListener("copy", function (e) {
+    e.preventDefault();
+    alert("Copying is disabled on this page.");
+  });
+
+  // Optional: Disable key combinations like Ctrl+S, Ctrl+U, Ctrl+Shift+I (DevTools)
+  document.addEventListener("keydown", function (e) {
+    if ((e.ctrlKey && (e.key === 'c' || e.key === 'u' || e.key === 's')) || 
+        (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+      e.preventDefault();
+    }
+  });
+</script>
+
+  
+</body>
+</html>
