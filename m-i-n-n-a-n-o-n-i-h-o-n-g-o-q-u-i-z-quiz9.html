@@ -25,6 +25,9 @@
     .options {
       margin-top: 15px;
       text-align: left;
+      display: flex; /* Make it a flex container */
+      flex-direction: column; /* Stack the options vertically */
+      gap: 15px;
     }
     .options input {
       margin-right: 10px;
@@ -49,7 +52,7 @@
         <header class="site-header">
         <div class="header-content">
             <h1 class="page-title">
-                <a href="index.php">Konnichiwa Japan</a>
+                <a href="index.html">Konnichiwa Japan</a>
             </h1>
         <div class="header-buttons">
             <button onclick="location.href='index.html'">Home</button>
@@ -59,8 +62,12 @@
         </div>
         <p class="header-description">Learn Japanese with passion, explore a new culture, and embrace the beauty of language!</p>
         </header>
-  
-  <div class="quiz-container">
+    <br>
+    <a colspan="5" style="text-align:center; font-size:18px;">JLPT N5 Lesson 1 All Vocabulary Quiz</a>
+    <br>
+    <br>
+    
+    <div class="quiz-container">
     <div id="question-container">
       <div class="question" id="question"></div>
       <div class="options" id="options"></div>
@@ -76,159 +83,181 @@
 
   <script>
     const vocab = [
-      { kanji: "出る", hiragana: "でる", romaji: "deru", meaning: "To go out" },
-            { kanji: "入る", hiragana: "はいる", romaji: "hairu", meaning: "To enter" },
-            { kanji: "終わる", hiragana: "おわる", romaji: "owaru", meaning: "To end" },
-            { kanji: "始める", hiragana: "はじめる", romaji: "hajimeru", meaning: "To begin" },
-            { kanji: "教える", hiragana: "おしえる", romaji: "oshieru", meaning: "To teach" },
-            { kanji: "習う", hiragana: "ならう", romaji: "narau", meaning: "To learn" },
-            { kanji: "借りる", hiragana: "かりる", romaji: "kariru", meaning: "To borrow" },
-            { kanji: "貸す", hiragana: "かす", romaji: "kasu", meaning: "To lend" },
-            { kanji: "買う", hiragana: "かう", romaji: "kau", meaning: "To buy" },
-            { kanji: "売る", hiragana: "うる", romaji: "uru", meaning: "To sell" },
-            { kanji: "分ける", hiragana: "わける", romaji: "wakeru", meaning: "To divide" },
-            { kanji: "作る", hiragana: "つくる", romaji: "tsukuru", meaning: "To make" },
-            { kanji: "洗う", hiragana: "あらう", romaji: "arau", meaning: "To wash" },
-            { kanji: "泳ぐ", hiragana: "およぐ", romaji: "oyogu", meaning: "To swim" },
-            { kanji: "歩く", hiragana: "あるく", romaji: "aruku", meaning: "To walk" },
-            { kanji: "読む", hiragana: "よむ", romaji: "yomu", meaning: "To read" },
-            { kanji: "書く", hiragana: "かく", romaji: "kaku", meaning: "To write" },
-            { kanji: "聞く", hiragana: "きく", romaji: "kiku", meaning: "To ask" },
-            { kanji: "食べる", hiragana: "たべる", romaji: "taberu", meaning: "To eat" },
-            { kanji: "飲む", hiragana: "のむ", romaji: "nomu", meaning: "To drink" },
-            { kanji: "買い物", hiragana: "かいもの", romaji: "kaimono", meaning: "Shopping" },
-            { kanji: "仕事", hiragana: "しごと", romaji: "shigoto", meaning: "Work" },
-            { kanji: "勉強", hiragana: "べんきょう", romaji: "benkyou", meaning: "Study" },
-            { kanji: "運転", hiragana: "うんてん", romaji: "unten", meaning: "Driving" },
-            { kanji: "電話", hiragana: "でんわ", romaji: "denwa", meaning: "Phone" },
-            { kanji: "テレビ", hiragana: "てれび", romaji: "terebi", meaning: "Television" },
-            { kanji: "新聞", hiragana: "しんぶん", romaji: "shinbun", meaning: "Newspaper" },
-            { kanji: "雑誌", hiragana: "ざっし", romaji: "zasshi", meaning: "Magazine" },
-            { kanji: "写真", hiragana: "しゃしん", romaji: "shashin", meaning: "Photograph" }
-    ];
+  { kanji: "私", hiragana: "わたし", meaning: "I, me" },
+  { kanji: "私たち", hiragana: "わたしたち", meaning: "We" },
+  { kanji: "あなた", hiragana: "あなた", meaning: "You" },
+  { kanji: "あの人", hiragana: "あのひと", meaning: "That person, he, she" },
+  { kanji: "あの方", hiragana: "あのかた", meaning: "That person (polite)" },
+  { kanji: "皆さん", hiragana: "みなさん", meaning: "Everyone" },
+  { kanji: "～さん", hiragana: "～さん", meaning: "Mr., Ms. (honorific)" },
+  { kanji: "～ちゃん", hiragana: "～ちゃん", meaning: "Suffix for young children" },
+  { kanji: "～君", hiragana: "～くん", meaning: "Suffix for boys (casual)" },
+  { kanji: "～人", hiragana: "～じん", meaning: "A national of ~ (e.g., 日本人: Japanese person)" },
+  { kanji: "先生", hiragana: "せんせい", meaning: "Teacher, instructor" },
+  { kanji: "教師", hiragana: "きょうし", meaning: "Teacher (used by oneself)" },
+  { kanji: "学生", hiragana: "がくせい", meaning: "Student" },
+  { kanji: "会社員", hiragana: "かいしゃいん", meaning: "Company employee" },
+  { kanji: "社員", hiragana: "しゃいん", meaning: "Employee of ~ company" },
+  { kanji: "銀行員", hiragana: "ぎんこういん", meaning: "Bank employee" },
+  { kanji: "医者", hiragana: "いしゃ", meaning: "Doctor" },
+  { kanji: "研究者", hiragana: "けんきゅうしゃ", meaning: "Researcher" },
+  { kanji: "エンジニア", hiragana: "エンジニア", meaning: "Engineer" },
+  { kanji: "大学", hiragana: "だいがく", meaning: "University, college" },
+  { kanji: "病院", hiragana: "びょういん", meaning: "Hospital" },
+  { kanji: "電気", hiragana: "でんき", meaning: "Electricity, light" },
+  { kanji: "誰", hiragana: "だれ", meaning: "Who" },
+  { kanji: "～歳", hiragana: "～さい", meaning: "~ years old" },
+  { kanji: "何歳", hiragana: "なんさい", meaning: "How old" },
+  { kanji: "失礼ですが", hiragana: "しつれいですが", meaning: "Excuse me, but ~" },
+  { kanji: "お名前は？", hiragana: "おなまえは？", meaning: "What is your name?" },
+  { kanji: "初めまして", hiragana: "はじめまして", meaning: "Nice to meet you" },
+  { kanji: "～から来ました", hiragana: "～からきました", meaning: "I came from ~" },
+  { kanji: "どうぞよろしく", hiragana: "どうぞよろしく", meaning: "Pleased to meet you" },
+  { kanji: "はい", hiragana: "はい", meaning: "Yes" },
+  { kanji: "いいえ", hiragana: "いいえ", meaning: "No" }
+];
 
-    // Shuffle function
-    function shuffle(array) {
-      for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-      }
+// Shuffle function
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
+// Generate quiz questions
+shuffle(vocab); // Shuffle the entire vocabulary list first
+const questions = vocab.slice(0, 10).map((item) => { // Take the first 10 items
+  const correct = item.meaning;
+  const wrongOptions = vocab
+    .filter((v) => v.meaning !== correct)
+    .sort(() => 0.5 - Math.random())
+    .slice(0, 3)
+    .map((v) => v.meaning);
+  const options = [correct, ...wrongOptions];
+  shuffle(options);
+
+  return {
+    question: `${item.kanji}（${item.hiragana}）`,
+    correct,
+    options
+  };
+});
+
+let currentQuestionIndex = 0;
+let score = 0;
+let state = "show";
+
+const questionElement = document.getElementById("question");
+const optionsElement = document.getElementById("options");
+const actionButton = document.getElementById("action-btn");
+const resultButton = document.getElementById("result-btn");
+const resultContainer = document.getElementById("result-container");
+const scoreElement = document.getElementById("score");
+const totalElement = document.getElementById("total");
+
+function loadQuestion() {
+  state = "show";
+  actionButton.textContent = "Show Answer";
+
+  const currentQuestion = questions[currentQuestionIndex];
+  questionElement.textContent = `Q${currentQuestionIndex + 1}: ${currentQuestion.question}`;
+  optionsElement.innerHTML = "";
+
+  currentQuestion.options.forEach(option => {
+    const div = document.createElement("div");
+    div.innerHTML = `
+      <label>
+        <input type="radio" name="option" value="${option}"> ${option}
+      </label>
+    `;
+    optionsElement.appendChild(div);
+  });
+}
+
+function highlightAnswer() {
+  const currentQuestion = questions[currentQuestionIndex];
+  const options = document.querySelectorAll("input[name='option']");
+
+  options.forEach(input => {
+    const label = input.parentElement;
+    input.disabled = true;
+    if (input.value === currentQuestion.correct) {
+      label.classList.add("correct");
+    }
+    if (input.checked && input.value !== currentQuestion.correct) {
+      label.classList.add("incorrect");
+    }
+  });
+}
+
+actionButton.addEventListener("click", () => {
+  const selectedOption = document.querySelector("input[name='option']:checked");
+
+  if (state === "show") {
+    if (!selectedOption) {
+      alert("Please select an option!");
+      return;
     }
 
-    // Generate quiz questions
-    const questions = vocab.map((item) => {
-      const correct = item.meaning;
-      const wrongOptions = vocab
-        .filter((v) => v.meaning !== correct)
-        .sort(() => 0.5 - Math.random())
-        .slice(0, 3)
-        .map((v) => v.meaning);
-      const options = [correct, ...wrongOptions];
-      shuffle(options);
-
-      return {
-        question: `${item.kanji}（${item.hiragana}）`,
-        correct,
-        options
-      };
-    });
-
-    let currentQuestionIndex = 0;
-    let score = 0;
-    let state = "show";
-
-    const questionElement = document.getElementById("question");
-    const optionsElement = document.getElementById("options");
-    const actionButton = document.getElementById("action-btn");
-    const resultButton = document.getElementById("result-btn");
-    const resultContainer = document.getElementById("result-container");
-    const scoreElement = document.getElementById("score");
-    const totalElement = document.getElementById("total");
-
-    function loadQuestion() {
-      state = "show";
-      actionButton.textContent = "Show Answer";
-
-      const currentQuestion = questions[currentQuestionIndex];
-      questionElement.textContent = `Q${currentQuestionIndex + 1}: ${currentQuestion.question}`;
-      optionsElement.innerHTML = "";
-
-      currentQuestion.options.forEach(option => {
-        const div = document.createElement("div");
-        div.innerHTML = `
-          <label>
-            <input type="radio" name="option" value="${option}"> ${option}
-          </label>
-        `;
-        optionsElement.appendChild(div);
-      });
+    const answer = selectedOption.value;
+    if (answer === questions[currentQuestionIndex].correct) {
+      score++;
     }
 
-    function highlightAnswer() {
-      const currentQuestion = questions[currentQuestionIndex];
-      const options = document.querySelectorAll("input[name='option']");
-
-      options.forEach(input => {
-        const label = input.parentElement;
-        input.disabled = true;
-        if (input.value === currentQuestion.correct) {
-          label.classList.add("correct");
-        }
-        if (input.checked && input.value !== currentQuestion.correct) {
-          label.classList.add("incorrect");
-        }
-      });
-    }
-
-    actionButton.addEventListener("click", () => {
-      const selectedOption = document.querySelector("input[name='option']:checked");
-
-      if (state === "show") {
-        if (!selectedOption) {
-          alert("Please select an option!");
-          return;
-        }
-
-        const answer = selectedOption.value;
-        if (answer === questions[currentQuestionIndex].correct) {
-          score++;
-        }
-
-        highlightAnswer();
-        state = "next";
-        actionButton.textContent = "Next Question";
-      } else {
-        currentQuestionIndex++;
-        if (currentQuestionIndex < questions.length) {
-          loadQuestion();
-        } else {
-          document.getElementById("question-container").style.display = "none";
-          resultContainer.style.display = "block";
-          scoreElement.textContent = score;
-          totalElement.textContent = questions.length;
-          actionButton.style.display = "none";
-        }
-      }
-    });
-
-    document.getElementById("restart-btn").addEventListener("click", () => {
-      currentQuestionIndex = 0;
-      score = 0;
-      state = "show";
-
-      shuffle(questions); // Optional: reshuffle question order on restart
-      resultContainer.style.display = "none";
-      document.getElementById("question-container").style.display = "block";
-      actionButton.style.display = "inline-block";
-      actionButton.textContent = "Show Answer";
-      resultButton.style.display = "none";
-
+    highlightAnswer();
+    state = "next";
+    actionButton.textContent = "Next Question";
+  } else {
+    currentQuestionIndex++;
+    if (currentQuestionIndex < questions.length) {
       loadQuestion();
-    });
+    } else {
+      document.getElementById("question-container").style.display = "none";
+      resultContainer.style.display = "block";
+      scoreElement.textContent = score;
+      totalElement.textContent = questions.length;
+      actionButton.style.display = "none";
+    }
+  }
+});
 
-    // Start quiz
-    shuffle(questions);
-    loadQuestion();
+document.getElementById("restart-btn").addEventListener("click", () => {
+  currentQuestionIndex = 0;
+  score = 0;
+  state = "show";
+
+  // Regenerate questions for a new random set
+  shuffle(vocab);
+  questions.length = 0; // Clear the previous questions
+  vocab.slice(0, 10).forEach(item => {
+    const correct = item.meaning;
+    const wrongOptions = vocab
+      .filter((v) => v.meaning !== correct)
+      .sort(() => 0.5 - Math.random())
+      .slice(0, 3)
+      .map((v) => v.meaning);
+    const options = [correct, ...wrongOptions];
+    shuffle(options);
+    questions.push({
+      question: `${item.kanji}（${item.hiragana}）`,
+      correct,
+      options
+    });
+  });
+
+  resultContainer.style.display = "none";
+  document.getElementById("question-container").style.display = "block";
+  actionButton.style.display = "inline-block";
+  actionButton.textContent = "Show Answer";
+  resultButton.style.display = "none";
+  totalElement.textContent = questions.length;
+
+  loadQuestion();
+});
+
+// Start quiz
+loadQuestion();
   </script>
   
   <footer class="footer">
