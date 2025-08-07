@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japanese Vocabulary Flashcards</title>
+    <link rel="stylesheet" href="flash.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M10 20h4V4h-4v16zm-6 0h4V4H4v16zm12 0h4V4h-4v16z' fill='%236699CC'/%3E%3C/svg%3E">
+</head>
+<body>
+    <header class="header">
+        <h1>Japanese Vocabulary Flashcards</h1>
+        <p>Click the card to reveal the meaning!</p>
+    </header>
+
+    <main class="container">
+        <div id="flashcard" class="flashcard">
+            <div class="card-inner">
+                <div class="card-front" id="card-front">
+                    </div>
+                <div class="card-back" id="card-back">
+                    </div>
+            </div>
+        </div>
+        <div class="controls">
+            <button id="prev-btn" class="nav-btn">Previous</button>
+            <button id="next-btn" class="nav-btn">Next</button>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024. All rights reserved.</p>
+    </footer>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    <script>
+        const vocab = [
+            { "kanji": "私", "hiragana": "わたし", "meaning": "I, me" },
+            { "kanji": "私たち", "hiragana": "わたしたち", "meaning": "We" },
+            { "kanji": "あなた", "hiragana": "あなた", "meaning": "You" },
+            { "kanji": "あの人", "hiragana": "あのひと", "meaning": "That person, he, she" },
+            { "kanji": "あの方", "hiragana": "あのかた", "meaning": "That person (polite)" },
+            { "kanji": "皆さん", "hiragana": "みなさん", "meaning": "Everyone" },
+            { "kanji": "～さん", "hiragana": "～さん", "meaning": "Mr., Ms. (honorific)" },
+            { "kanji": "～ちゃん", "hiragana": "～ちゃん", "meaning": "Suffix for young children" },
+            { "kanji": "～君", "hiragana": "～くん", "meaning": "Suffix for boys (casual)" },
+            { "kanji": "～人", "hiragana": "～じん", "meaning": "A national of ~ (e.g., 日本人: Japanese person)" },
+            { "kanji": "先生", "hiragana": "せんせい", "meaning": "Teacher, instructor" },
+            { "kanji": "教師", "hiragana": "きょうし", "meaning": "Teacher (used by oneself)" },
+            { "kanji": "学生", "hiragana": "がくせい", "meaning": "Student" },
+            { "kanji": "会社員", "hiragana": "かいしゃいん", "meaning": "Company employee" },
+            { "kanji": "社員", "hiragana": "しゃいん", "meaning": "Employee of ~ company" },
+            { "kanji": "銀行員", "hiragana": "ぎんこういん", "meaning": "Bank employee" },
+            { "kanji": "医者", "hiragana": "いしゃ", "meaning": "Doctor" },
+            { "kanji": "研究者", "hiragana": "けんきゅうしゃ", "meaning": "Researcher" },
+            { "kanji": "エンジニア", "hiragana": "エンジニア", "meaning": "Engineer" },
+            { "kanji": "大学", "hiragana": "だいがく", "meaning": "University, college" },
+            { "kanji": "病院", "hiragana": "びょういん", "meaning": "Hospital" },
+            { "kanji": "電気", "hiragana": "でんき", "meaning": "Electricity, light" },
+            { "kanji": "誰", "hiragana": "だれ", "meaning": "Who" }
+        ];
+
+        
+        
+        
+        
+        
+        
+        
+        
+        const flashcard = document.getElementById('flashcard');
+        const cardFront = document.getElementById('card-front');
+        const cardBack = document.getElementById('card-back');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+
+        let currentCardIndex = 0;
+
+        function displayCard() {
+            if (vocab.length === 0) {
+                cardFront.textContent = "No data available.";
+                return;
+            }
+            const currentVocab = vocab[currentCardIndex];
+            cardFront.innerHTML = `
+                <span class="kanji">${currentVocab.kanji}</span>
+                <br>
+                <br>
+                <br>
+                <span class="hiragana">${currentVocab.hiragana}</span>
+            `;
+            cardBack.textContent = currentVocab.meaning;
+
+            flashcard.classList.remove('is-flipped');
+        }
+
+        flashcard.addEventListener('click', () => {
+            flashcard.classList.toggle('is-flipped');
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentCardIndex = (currentCardIndex + 1) % vocab.length;
+            displayCard();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            currentCardIndex = (currentCardIndex - 1 + vocab.length) % vocab.length;
+            displayCard();
+        });
+
+        // Initial card display
+        displayCard();
+    </script>
+</body>
+</html>
