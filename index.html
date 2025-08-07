@@ -5,8 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Konnichiwa Japan</title>
   <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="donation.css">
   <style>
-    
+    .donate-button {
+    display: inline-block;
+    background: linear-gradient(135deg, #ff5f6d, #ffc371);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .donate-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.3);
+  }
+
+  .donate-button:active {
+    transform: scale(0.98);
+  }
   </style>
 </head>
 
@@ -26,12 +47,15 @@
       <p class="header-description">
         Learn Japanese with passion, explore a new culture, and embrace the beauty of language!
       </p>
+      <br>
+      <a href="#" target="_blank" class="donate-button">💖 Support Us to Run This Website</a>
     </header>
 
     <div class="table-container">
       <div id="lessonButtonsContainer">
           
         <div class="center-button">
+        
         <a class="custom-button" href="m-i-n-n-a-n-o-n-i-h-o-n-g-o-pr_calculator.html">Check Your Point for PR</a>
           </div>
 
@@ -173,6 +197,8 @@
         <a class="section-button" href="#">Scholarship Information</a>
         <a class="section-button" href="#">Residence Information</a>
         <a class="section-button" href="#">Cultural Events</a>
+        <br>
+        <a href="#" target="_blank" class="donate-button">💖 Support Us to Run This Website</a>
       </div>
     </div>
 
