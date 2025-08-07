@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz</title>
+    <title>General Knowledge Quiz</title>
     <link rel="stylesheet" href="index.css">
     <style>
         body {
@@ -18,13 +18,19 @@
             border: 1px solid #ccc;
             border-radius: 10px;
         }
+        
         .question {
             font-size: 1.2em;
         }
+        
         .options {
             margin-top: 15px;
             text-align: left;
+            display: flex; /* Make it a flex container */
+            flex-direction: column; /* Stack the options vertically */
+            gap: 15px;
         }
+        
         .options input {
             margin-right: 10px;
         }
@@ -43,6 +49,12 @@
         }
     </style>
 </head>
+    
+    <br>
+    <a colspan="5" style="text-align:center; font-size:18px;">Japan Basic General Knowledge Quiz</a>
+    <br>
+    <br>
+    
 <body>
     <div class="wrapper">
         <header class="site-header">
@@ -58,7 +70,7 @@
         </div>
         <p class="header-description">Learn Japanese with passion, explore a new culture, and embrace the beauty of language!</p>
         </header>
-
+        
         <div class="quiz-container" id="quiz-container">
             <div id="question-container">
                 <div class="question" id="question"></div>
